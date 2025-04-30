@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basar's Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="text-white">
+  <!---============== Navbar =============-->
+  <nav id="nav" class="bg-gray-900 p-4 shadow-md z-50 absolute w-full">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="text-xl font-bold">Basar-BR7</div>
+      <div class="hidden md:flex space-x-6">
+        <a href="#" class="hover:text-blue-400">Home</a>
+        <a href="#about" class="hover:text-blue-400">About</a>
+        <a href="#contact" class="hover:text-blue-400">Contact</a>
+        <a href="#faq" class="hover:text-blue-400">FAQ</a>
+      </div>
+      <div class="md:hidden">
+        <button id="menu-toggle" class="focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="md:hidden mt-2 hidden">
+      <a href="#" class="block px-4 py-2 hover:bg-gray-700">Home</a>
+      <a href="#about" class="block px-4 py-2 hover:bg-gray-700">About</a>
+      <a href="#contact" class="block px-4 py-2 hover:bg-gray-700">Contact</a>
+      <a href="#faq" class="block px-4 py-2 hover:bg-gray-700">FAQ</a>
+    </div>
+  </nav>
+
+  <!--=================== Hero Section ==================-->
+  <section class="flex flex-col md:flex-row items-center justify-between  px-20 py-20 gap-10">
+    <div class="text-left max-w-3xl py-20">
+      <h1 class="text-3xl font-bold mb-4">Hi, I'm Basar </h1>
+      <h3 class="text-blue-500 text-6xl my-7">Frontend Developer</h3>
+      <p class="text-lg mb-14">A passionate Frontend Developer who loves crafting beautiful web experiences using HTML, Tailwind CSS, and JavaScript.</p>
+      <a href="#projects"  class="bg-blue-500 hover:bg-blue-700 text-white px-6 py-4 rounded-lg transition">View Projects</a>
+    </div>
+    <div class=" ">
+      <img  alt="Coding" width="300" src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" />
+    </div>
+  </section>
+
+  <!--============= Projects Section ===============-->
+  <section id="projects" class="px-8 py-20 bg-gray-800">
+    <h2 class="text-3xl font-bold text-center mb-12">Projects</h2>
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div class="bg-gray-900 p-6 rounded-xl transform hover:scale-105 transition hover-3d">
+        <h3 class="text-xl font-semibold mb-2">Weather App</h3>
+        <p class="text-sm mb-4">Built with HTML, Tailwind, and JavaScript to display real-time weather info.</p>
+        <a href="#" class="text-blue-400 hover:underline">View Project</a>
+      </div>
+      <div class="bg-gray-900 p-6 rounded-xl transform hover:scale-105 transition hover-3d">
+        <h3 class="text-xl font-semibold mb-2">Portfolio Website</h3>
+        <p class="text-sm mb-4">Responsive site to showcase skills and projects using Bootstrap and HTML.</p>
+        <a href="#" class="text-blue-400 hover:underline">View Project</a>
+      </div>
+      <div class="bg-gray-900 p-6 rounded-xl transform hover:scale-105 transition hover-3d">
+        <h3 class="text-xl font-semibold mb-2">Todo List</h3>
+        <p class="text-sm mb-4">A clean and interactive todo list made using vanilla JavaScript.</p>
+        <a href="#" class="text-blue-400 hover:underline">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!--================= Footer =================-->
+  <footer class="text-center p-6 bg-gray-900 mt-10">
+    &copy; 2025 Basar. All rights reserved.
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>
