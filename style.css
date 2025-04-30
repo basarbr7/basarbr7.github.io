@@ -49,4 +49,11 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.my-container{
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+
+
 /* */
