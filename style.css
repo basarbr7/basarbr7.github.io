@@ -1,40 +1,36 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-  }
-  .rotate-card {
-    transition: transform 0.6s ease;
-    transform-style: preserve-3d;
-  }
-  .hover-3d:hover {
-    transform: rotateY(10deg) rotateX(10deg);
-  }
-
-  .header-animation{
-    animation: headerSticky 0.7s ease-in-out forwards;
-  }
-  @keyframes headerSticky {
-    0% {
-        transform: translateY(-100%);
-        -webkit-transform: translateY(-100%);
-        -moz-transform: translateY(-100%);
-        -ms-transform: translateY(-100%);
-        -o-transform: translateY(-100%);
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
 }
 
-    100% {
-        transform: translateY(0);
-        -webkit-transform: translateY(0);
-        -moz-transform: translateY(0);
-        -ms-transform: translateY(0);
-        -o-transform: translateY(0);
+/* .hover-3d:hover {
+  transform: rotateY(10deg) rotateX(10deg);
+} */
+
+.header-animation {
+  animation: headerSticky 0.7s ease-in-out forwards;
 }
+@keyframes headerSticky {
+  0% {
+    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+  }
 }
 
 .text-gradient {
@@ -49,45 +45,65 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.my-container{
+.my-container {
   max-width: 1120px;
   margin: 0 auto;
 }
 
-.animate-html{
+.animate-html {
   animation: progress-html 5s linear forwards;
 }
-@keyframes  progress-html{
-  0%{width: 0%;}
-  100%{width: 90%;}
+@keyframes progress-html {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 90%;
+  }
 }
- .animate-css{
+.animate-css {
   animation: progress-css 6s linear forwards;
 }
-@keyframes  progress-css{
-  0%{width: 0%;}
-  100%{width: 80%;}
+@keyframes progress-css {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 80%;
+  }
 }
- .animate-bootstrap{
+.animate-bootstrap {
   animation: progress-bootstrap 6s linear forwards;
 }
-@keyframes  progress-bootstrap{
-  0%{width: 0%;}
-  100%{width: 65%;}
+@keyframes progress-bootstrap {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 65%;
+  }
 }
-.animate-js{
+.animate-js {
   animation: progress-js 4s linear forwards;
 }
-@keyframes  progress-js{
-  0%{width: 0%;}
-  100%{width: 55%;}
+@keyframes progress-js {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 55%;
+  }
 }
-.animate-react{
+.animate-react {
   animation: progress-react 3s linear forwards;
 }
-@keyframes  progress-react{
-  0%{width: 0%;}
-  100%{width: 50%;}
-} 
+@keyframes progress-react {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 50%;
+  }
+}
 
 /* */
