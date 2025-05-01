@@ -36,6 +36,28 @@
   });
 
 
+  // progress bar animation
+  let animated = false;
+
+  document.addEventListener("scroll", function () {
+    const section = document.querySelector("#about");
+    const bars = document.querySelectorAll(".progress-bar");
   
+    const sectionTop = section.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+    console.log(windowHeight);
+    
+  
+    if (!animated && sectionTop < windowHeight-100) {
+      animated = true;
+  
+      bars.forEach(bar => {
+        const animationClass = bar.dataset.animation;
+        bar.classList.add(animationClass);
+      });
+    }
+  });
+  
+
 
   

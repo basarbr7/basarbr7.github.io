@@ -54,6 +54,40 @@ body {
   margin: 0 auto;
 }
 
-
+.animate-html{
+  animation: progress-html 5s linear forwards;
+}
+@keyframes  progress-html{
+  0%{width: 0%;}
+  100%{width: 90%;}
+}
+ .animate-css{
+  animation: progress-css 6s linear forwards;
+}
+@keyframes  progress-css{
+  0%{width: 0%;}
+  100%{width: 80%;}
+}
+ .animate-bootstrap{
+  animation: progress-bootstrap 6s linear forwards;
+}
+@keyframes  progress-bootstrap{
+  0%{width: 0%;}
+  100%{width: 65%;}
+}
+.animate-js{
+  animation: progress-js 4s linear forwards;
+}
+@keyframes  progress-js{
+  0%{width: 0%;}
+  100%{width: 55%;}
+}
+.animate-react{
+  animation: progress-react 3s linear forwards;
+}
+@keyframes  progress-react{
+  0%{width: 0%;}
+  100%{width: 50%;}
+} 
 
 /* */
