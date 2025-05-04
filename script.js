@@ -1,5 +1,5 @@
   
-  AOS.init();
+  AOS.init({once: true});
 
   document.getElementById('menu-toggle').addEventListener('click', () => {
       const menu = document.getElementById('mobile-menu');

@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body class=" text-white scroll-smooth select-none font_pop">
+<body data-aos-once="true" class=" text-white scroll-smooth select-none font_pop">
   <!---============== Navbar =============-->
   <nav id="nav" class="mt-5 p-4 z-50 absolute  w-full">
     <div class="my-container flex justify-between items-center text-black">
@@ -57,7 +57,7 @@
   <section id="home" class="bg-slate-200 text-black">
     <!-- Text Part -->
     <div class="my-container flex flex-col md:flex-row items-center justify-between  md:py-40 gap-10">
-      <div data-aos="fade-right"  data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400" data-aos-easing="ease-in-out" class="text-center md:text-left max-w-2xl md:mt-10 ">
+      <div data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400" data-aos-easing="ease-in-out" class="text-center md:text-left max-w-2xl md:mt-10 ">
         <h1    class="text-2xl sm:text-3xl font-bold mb-4">Hi, I'm Basar</h1>
         <h3 class="text-blue-600 text-4xl sm:text-5xl md:text-6xl my-6 leading-[200%]">Frontend Developer</h3>
         <p class="text-base sm:text-lg mb-10">A passionate Frontend Developer who loves crafting beautiful web experiences using HTML, Tailwind CSS, and JavaScript.</p>
@@ -67,7 +67,7 @@
       </div>
     
       <!-- Image Part -->
-      <div data-aos="fade-left"  data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400" data-aos-easing="ease-in-out" class="flex justify-center md:justify-end md: mt-14">
+      <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400" data-aos-easing="ease-in-out" class="flex justify-center md:justify-end md: mt-14">
         <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" alt="Coding" class="w-64 sm:w-80 md:w-[400px]" />
       </div>
     </div>
@@ -75,7 +75,7 @@
   
   <!-- =============About Me section================-->
   <section id="about" class="px-6 py-10 bg-[#101010] text-white">
-    <div class="my-container mb-10">
+    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-easing="ease-in-out"  class="my-container mb-10">
       <!-- heading -->
         <div class="flex flex-col justify-center items-center mb-16">
           <h2 class="text-3xl font-medium text-center  mb-5"><span class="text-gradient uppercase">About Me</span></h2>
@@ -123,7 +123,7 @@
   
   <!--============= skill Section ===============-->
   <section id="skill" class="bg-[#F8F9FA] text-black py-10">
-    <div class="my-container mb-10">
+    <div data-aos="flip-left" data-aos-duration="1000" data-aos-delay="300" data-aos-easing="ease-in-out" class="my-container mb-10">
       <div class=" flex flex-col gap-2 mb-10">
         <div class="flex flex-col justify-center items-center mb-16">
           <h2 class="text-3xl font-medium text-center  mb-5"><span class="text-gradient uppercase">My Skills</span></h2>
@@ -193,7 +193,7 @@
 
   <!--============= Projects Section ===============-->
   <section id="projects" class="px-8 bg-[#EFEFEF] py-10">
-    <div class="my-container mb-10">
+    <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200" data-aos-easing="ease-in-out" class="my-container mb-10">
       <div class="flex flex-col justify-center items-center mb-14">
         <h2 class="text-3xl font-medium text-center mb-5 uppercase"><span class="text-gradient">My Projects</span></h2>
         <p class="text-xl text-gray-600 ">Here you'll find some of my Projects, I have put all my skills on it.</p>
@@ -250,9 +250,9 @@
   <!--================ FAQ section ==================-->
   <section id="faq" class="py-10 bg-white text-black select-none">
     <div class="my-container mb-10">
-      <h2 class="text-3xl font-medium mb-10 text-gray-700 text-center uppercase">Frequently Asked Questions</h2>
+      <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-easing="ease-in-out" class="text-3xl font-medium mb-10 text-gray-700 text-center uppercase">Frequently Asked Questions</h2>
       <div class="space-y-4">
-        <details class="group bg-[rgba(29,28,28,0.09)] p-5 rounded-md transition">
+        <details data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-easing="ease-in-out" class="group bg-[rgba(29,28,28,0.09)] p-5 rounded-md transition">
           <summary class="cursor-pointer text-lg font-medium group-open:text-indigo-400">
             What services do you offer?
           </summary>
@@ -261,7 +261,7 @@
           </p>
         </details>
     
-        <details class="group bg-[rgba(29,28,28,0.09)] p-5 rounded-md transition">
+        <details data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-easing="ease-in-out" class="group bg-[rgba(29,28,28,0.09)] p-5 rounded-md transition">
           <summary class="cursor-pointer text-lg font-medium group-open:text-indigo-400">
             How do you deliver projects?
           </summary>
@@ -270,7 +270,7 @@
           </p>
         </details>
     
-        <details class="group bg-[rgba(29,28,28,0.09)] p-5 rounded-md transition">
+        <details data-aos="fade-up" data-aos-duration="900" data-aos-delay="300" data-aos-easing="ease-in-out" class="group bg-[rgba(29,28,28,0.09)] p-5 rounded-md transition">
           <summary class="cursor-pointer text-lg font-medium group-open:text-indigo-400">
             Can you work with Figma or Adobe XD designs?
           </summary>
@@ -279,7 +279,7 @@
           </p>
         </details>
     
-        <details class="group bg-[rgba(29,28,28,0.09)] p-5 rounded-md transition">
+        <details data-aos="fade-up" data-aos-duration="900" data-aos-delay="300" data-aos-easing="ease-in-out" class="group bg-[rgba(29,28,28,0.09)] p-5 rounded-md transition">
           <summary class="cursor-pointer text-lg font-medium group-open:text-indigo-400">
             What is your typical turnaround time?
           </summary>
@@ -288,7 +288,7 @@
           </p>
         </details>
     
-        <details class="group bg-[rgba(29,28,28,0.09)] p-5 rounded-md transition">
+        <details data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-easing="ease-in-out" class="group bg-[rgba(29,28,28,0.09)] p-5 rounded-md transition">
           <summary class="cursor-pointer text-lg font-medium group-open:text-indigo-400">
             Do you offer revisions?
           </summary>
@@ -304,7 +304,7 @@
   <!--================ contact ==================-->
   <section id="contact" class="min-h-screen py-10  bg-gray-50">
     <div class="my-container mb-10">
-      <div class="text-center">
+      <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-easing="ease-in-out" class="text-center">
         <h2 class="text-3xl font-semibold text-gray-800 mb-4 uppercase">Get In Tuch</h2>
         <p class="text-gray-600 mb-8 text-center max-w-md mx-auto">
           Have a question, proposal, or just want to say hello? Feel free to reach out!
@@ -312,7 +312,7 @@
       </div>
       
       <div class="grid grid-cols-12 space-x-5">
-        <div class="col-span-4 flex flex-col items-center justify-center space-y-10 text-black">
+        <div data-aos="fade-up-right" data-aos-duration="1000" data-aos-delay="400" data-aos-easing="ease-in-out" class="col-span-4 flex flex-col items-center justify-center space-y-10 text-black">
           <div class="flex flex-col items-center space-y-3">
             <i class="fa-solid fa-mobile-screen-button text-3xl"></i>
             <span class="font-light text-gray-700">+8801518-403693</span>
@@ -328,7 +328,7 @@
           </div>
         </div>
 
-        <div class="col-span-8">
+        <div data-aos="fade-up-left" data-aos-duration="1000" data-aos-delay="400" data-aos-easing="ease-in-out" class="col-span-8">
           <form class="space-y-4 w-full text-gray-900">
             <div class="grid grid-cols-12 gap-x-6">
               <div class="col-span-6 space-y-2">
