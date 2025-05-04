@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body class=" text-white scroll-smooth font_pop">
+<body class=" text-white scroll-smooth select-none font_pop">
   <!---============== Navbar =============-->
   <nav id="nav" class="mt-5 p-4 z-50 absolute  w-full">
     <div class="my-container flex justify-between items-center text-black">
@@ -74,7 +74,7 @@
     <div class="my-container mb-10">
       <!-- heading -->
         <div class="flex flex-col justify-center items-center mb-16">
-          <h2 class="text-3xl font-bold text-center  mb-5"><span class="text-gradient uppercase">About Me</span></h2>
+          <h2 class="text-3xl font-medium text-center  mb-5"><span class="text-gradient uppercase">About Me</span></h2>
           <p class="text-xl text-[#c7c7c7]">Here you will find more information about me and what I do.</p>
         </div>
     
@@ -122,7 +122,7 @@
     <div class="my-container mb-10">
       <div class=" flex flex-col gap-2 mb-10">
         <div class="flex flex-col justify-center items-center mb-16">
-          <h2 class="text-3xl font-bold text-center  mb-5"><span class="text-gradient uppercase">My Skills</span></h2>
+          <h2 class="text-3xl font-medium text-center  mb-5"><span class="text-gradient uppercase">My Skills</span></h2>
           <p class="text-xl text-gray-600">Here you'll find a summary of my technical skills and the tools I work with</p>
         </div>
 
@@ -191,7 +191,7 @@
   <section id="projects" class="px-8 bg-[#EFEFEF] py-10">
     <div class="my-container mb-10">
       <div class="flex flex-col justify-center items-center mb-14">
-        <h2 class="text-3xl font-bold text-center mb-5"><span class="text-gradient">My Projects</span></h2>
+        <h2 class="text-3xl font-medium text-center mb-5 uppercase"><span class="text-gradient">My Projects</span></h2>
         <p class="text-xl text-gray-600 ">Here you'll find some of my Projects, I have put all my skills on it.</p>
       </div>
   
@@ -246,7 +246,7 @@
   <!--================ FAQ section ==================-->
   <section id="faq" class="py-10 bg-white text-black select-none">
     <div class="my-container mb-10">
-      <h2 class="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
+      <h2 class="text-3xl font-medium mb-10 text-gray-700 text-center uppercase">Frequently Asked Questions</h2>
       <div class="space-y-4">
         <details class="group bg-[rgba(29,28,28,0.09)] p-5 rounded-md transition">
           <summary class="cursor-pointer text-lg font-medium group-open:text-indigo-400">
@@ -301,7 +301,7 @@
   <section id="contact" class="min-h-screen py-10  bg-gray-50">
     <div class="my-container mb-10">
       <div class="text-center">
-        <h2 class="text-3xl font-semibold text-gray-800 mb-4">Get In Tuch</h2>
+        <h2 class="text-3xl font-semibold text-gray-800 mb-4 uppercase">Get In Tuch</h2>
         <p class="text-gray-600 mb-8 text-center max-w-md mx-auto">
           Have a question, proposal, or just want to say hello? Feel free to reach out!
         </p>
@@ -325,7 +325,7 @@
         </div>
 
         <div class="col-span-8">
-          <form class="space-y-4 w-full">
+          <form class="space-y-4 w-full text-gray-900">
             <div class="grid grid-cols-12 gap-x-6">
               <div class="col-span-6 space-y-2">
                 <label for="name" class="text-black font-medium">Name</label>
@@ -337,12 +337,13 @@
               </div>
             </div>
             <div class="w-full space-y-2">
-              <label for="name" class="text-black font-medium">Email Address</label>
-                <input type="email" placeholder="Your Email" class="w-full px-4 py-2 border border-gray-300 rounded-sm focus:text-black focus:ring-1 focus:ring-blue-500 outline-none col-span-6" required />
+              <label for="subject" class="text-black font-medium">Subject</label>
+              <input type="text" placeholder="Enter Subject" class="w-full px-4 py-2 border border-gray-300 rounded-sm focus:text-black focus:ring-1 focus:ring-blue-500 outline-none" required />
+
             </div>
             <div class="w-full space-y-2">
               <label for="name" class="text-black font-medium">Message</label>
-              <textarea rows="5" placeholder="Your Message" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:text-black focus:ring-1 focus:ring-blue-500 outline-none" required ></textarea>
+              <textarea rows="5" placeholder="Your Message" class="w-full px-4 py-2 border border-gray-300 rounded-sm focus:text-black focus:ring-1 focus:ring-blue-500 outline-none" required ></textarea>
             </div>
             <button type="submit" class=" bg-blue-600 text-white py-4 px-4 rounded-lg hover:bg-blue-700 transition">Send Message</button>
           </form>
