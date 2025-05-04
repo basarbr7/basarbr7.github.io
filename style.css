@@ -4,9 +4,14 @@
   box-sizing: border-box;
 }
 
+:root{
+  --font-family-poppins: "Poppins", sans-serif;
+}
+
 body {
   background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
 }
+
 
 /* .hover-3d:hover {
   transform: rotateY(10deg) rotateX(10deg);
@@ -104,6 +109,11 @@ body {
   100% {
     width: 50%;
   }
+}
+
+
+.font_pop{
+  font-family: var(--font-family-poppins);
 }
 
 /* */

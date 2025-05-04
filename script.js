@@ -8,11 +8,13 @@
   window.addEventListener("scroll", (e)=>{
     let scrolly = window.scrollY
     if(scrolly>100){
-      navbar.classList.add("fixed", "top-0", "header-animation")
+      navbar.classList.add("fixed", "top-0", "header-animation", "bg-[#ffffff]", "shadow-lg")
       navbar.classList.remove("absolute");
+      navbar.classList.remove("mt-5");
     }else{
-      navbar.classList.remove("fixed", "top-0", "header-animation")
+      navbar.classList.remove("fixed", "top-0", "header-animation", "bg-[#ffffff]", "shadow-lg")
       navbar.classList.add("absolute");
+      navbar.classList.add("mt-5");
     }
     
   })
