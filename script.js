@@ -1,10 +1,36 @@
   
   AOS.init({once: true});
 
-  document.getElementById('menu-toggle').addEventListener('click', () => {
-      const menu = document.getElementById('mobile-menu');
-      menu.classList.toggle('hidden');
-    });
+  // mouse coursor animation events
+  const cursor = document.querySelector(".cursor")
+  let timeout;
+  document.addEventListener("mousemove", (e)=>{
+    let x = e.pageX
+    let y = e.pageY
+    cursor.style.top = y + "px"
+    cursor.style.left = x + "px"
+    cursor.style.display = "block"
+
+    clearTimeout(timeout)
+    timeout = setTimeout(()=>{
+      cursor.style.display = "none"
+    },1000)
+  })
+
+  document.addEventListener("mouseout", (e)=>{
+    cursor.style.display = "none"
+    clearTimeout(timeout)
+  })
+
+
+
+
+  const toggleBtn = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  toggleBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
 
 
   const navbar = document.querySelector("#nav")

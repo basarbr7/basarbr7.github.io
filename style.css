@@ -127,5 +127,40 @@ body {
 .font_pop{
   font-family: var(--font-family-poppins);
 }
-
+body{
+  position: relative;
+}
+.cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%,-50%);
+  z-index: 999;
+  background: #2696E8;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 20px #2696E8,
+              0 0 60px #2696E8,
+              0 0 100px #2696E8;
+  display: none;
+  animation: colors 5s infinite;
+}
+@keyframes colors {
+  0%{ filter: hue-rotate(0deg);}
+  100%{ filter: hue-rotate(360deg);}
+}
+.cursor::before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background: #2696E8;
+  opacity: 0.3;
+  border-radius: 50%;
+}
 /* */
