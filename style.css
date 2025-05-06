@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 :root{
@@ -61,7 +62,13 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: color 5s infinite;
 }
+@keyframes color {
+  0%{ filter: hue-rotate(0deg);}
+  100%{ filter: hue-rotate(360deg);}
+}
+
 .my-container {
   max-width: 1120px;
   margin: 0 auto;
@@ -123,7 +130,6 @@ body {
   }
 }
 
-
 .font_pop{
   font-family: var(--font-family-poppins);
 }
@@ -136,7 +142,7 @@ body{
   left: 0;
   transform: translate(-50%,-50%);
   z-index: 999;
-  background: #2696E8;
+  background: rgba(38, 151, 232, 0.5);
   height: 15px;
   width: 15px;
   border-radius: 50%;
@@ -163,4 +169,10 @@ body{
   opacity: 0.3;
   border-radius: 50%;
 }
-/* */
+
+#mobile-menu a{
+  box-shadow: 0 1px 0 0 #c2c2c2;
+}
+#mobile-menu a:last-child{
+  box-shadow: none;
+}
