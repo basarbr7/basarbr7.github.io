@@ -2,6 +2,7 @@
 
 import About from "@/component/About";
 import Hero from "@/component/Hero";
+import Skills from "@/component/Skill";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -38,6 +39,7 @@ export default function Home() {
       </div>
         <Hero/>
         <About/>
+        <Skills/>
     </div>
   );
 }

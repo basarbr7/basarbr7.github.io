@@ -2,6 +2,8 @@
 
 import Container from "@/layer/Container";
 import { useEffect, useState } from "react";
+import { Canvas } from "@react-three/fiber";
+import { Text, OrbitControls } from "@react-three/drei";
 
 export default function Hero() {
   const texts = ["Frontend Developer", "React Developer", "Next Enthusiast"];
@@ -15,15 +17,14 @@ export default function Hero() {
       setTimeout(() => {
         setTextIndex((prev) => (prev + 1) % texts.length);
         setIsDeleting(false);
-      }, 500); 
-    }, 3000); 
+      }, 500);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="min-h-screen ">
-      
       {/* Content */}
       <div className="pt-40 z-10 flex items-center justify-center h-full">
         <Container>
@@ -38,18 +39,43 @@ export default function Hero() {
               >
                 {texts[textIndex]}
               </span>
-               <span className="inline-block w-[2px] h-14 bg-gray-300"></span>
+              <span className="inline-block w-[2px] h-14 bg-gray-300"></span>
             </div>
 
             {/* Heading */}
-            <h3 className="bg-gradient-to-r from-blue-400 via-cyan-300 to-purple-400 bg-clip-text text-transparent text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6">
-              Hi, I am Basar
-            </h3>
+            <Canvas camera={{ position: [0, 0, 10], fov: 50 }}>
+              {/* Lighting */}
+              <ambientLight intensity={0.5} />
+              <directionalLight position={[0, 5, 5]} intensity={1} />
+
+              {/* 3D Text */}
+              <Text
+                position={[0, 0, 0]}
+                fontSize={1.8}
+                color="#00f0ff"
+                anchorX="center"
+                anchorY="middle"
+                outlineWidth={0.02}
+                outlineColor="#ffffff"
+              >
+                Hi, I am Basar
+              </Text>
+
+              {/* Optional: OrbitControls for interaction */}
+              <OrbitControls
+                enableZoom={false}
+                autoRotate
+                autoRotateSpeed={1}
+              />
+            </Canvas>
 
             <p className="text-base sm:text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-10">
               A passionate Frontend Developer who loves crafting
               <span className="text-blue-400 font-semibold"> modern </span>&
-              <span className="text-purple-400 font-semibold"> user-friendly </span>
+              <span className="text-purple-400 font-semibold">
+                {" "}
+                user-friendly{" "}
+              </span>
               web experiences using React, Tailwind CSS, and JavaScript.
             </p>
 
