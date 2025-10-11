@@ -2,7 +2,7 @@
 
 import Container from "@/layer/Container";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   SiReact,
   SiNextdotjs,
@@ -44,14 +44,25 @@ export default function Skills() {
   const [activeCategory, setActiveCategory] = useState("All");
 
   const categories = ["All", "Frontend", "Backend", "Database", "Styling", "Animation",];
+  
   const filteredSkills =
     activeCategory === "All"
       ? skills
       : skills.filter((s) => s.category === activeCategory);
 
+   // create a ref for the skills section
+  // const skillsRef = useRef<HTMLDivElement>(null);
+
+  // const handleCategoryClick = (category: string) => {
+  //   setActiveCategory(category);
+
+  //   // scroll to the top of the skills section
+  //   skillsRef.current?.scrollIntoView({ behavior: "smooth" });
+  // };
+
   return (
-    <div className="py-20 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
-      <Container className="px-6 text-center">
+    <div className="relative min-h-screen py-20 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+      <Container className=" text-center">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -63,30 +74,32 @@ export default function Skills() {
 
         {/* Category Buttons */}
         <div className="flex flex-wrap justify-center gap-3 mb-10">
-          {categories.map((cat) => (
+          {categories.map((item) => (
             <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
+              key={item}
+              onClick={(e) => {
+                e.preventDefault();
+                setActiveCategory(item)
+              }}
               className={`px-4 py-2 rounded-full text-sm font-medium transition cursor-pointer ${
-                activeCategory === cat
+                activeCategory === item
                   ? "bg-blue-500 text-white"
                   : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-400 hover:text-white"
               }`}
             >
-              {cat}
+              {item}
             </button>
           ))}
         </div>
 
         {/* Skills Grid */}
         <motion.div
-          layout
           className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8"
         >
           {filteredSkills.map((skill, i) => (
             <motion.div
               key={skill.name}
-              whileHover={{ scale: 1.1, rotate: 3 }}
+              whileHover={{ scale: 1.1, rotate: 2 }}
               transition={{ type: "spring", stiffness: 200, damping: 10 }}
               className="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl p-6 flex flex-col items-center justify-center space-y-3 cursor-pointer"
             >

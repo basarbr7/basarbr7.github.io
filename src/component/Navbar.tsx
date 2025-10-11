@@ -1,8 +1,9 @@
 "use client";
 
+import { motion, AnimatePresence } from "framer-motion"
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, Moon, Sun, X } from "lucide-react";
 import Container from "@/layer/Container";
 
 const navItems = [
@@ -14,6 +15,10 @@ const navItems = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleMode = ()=>{
+    setIsOpen(!isOpen)
+  }
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
@@ -36,6 +41,19 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
+
+        {/* dark light */}
+        <div onClick={handleMode} className=" w-14 px-2 py-[2px] border border-gray-400 rounded-full hover:border-red-500 bg-gray-300 transition cursor-pointer">
+         <motion.div
+          animate={{x: isOpen? 20: 0}}
+          transition={{ stiffness: 300, damping: 20 }}
+         >
+           {
+            isOpen ? 
+          <Moon size={18} /> :<Sun size={18}/>
+          }
+         </motion.div>
+        </div>
 
         {/* Mobile Menu Button */}
         <button

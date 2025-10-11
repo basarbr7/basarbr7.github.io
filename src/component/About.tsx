@@ -5,7 +5,7 @@ import { FaFacebook } from "react-icons/fa";
 
 export default function About() {
   return (
-    <div className="px-6 py-10 bg-[#101010] text-white">
+    <div className="relative px-6 py-10 bg-[#101010] text-white">
       <Container className="mb-10">
         {/* heading */}
         <div 

@@ -62,3 +62,28 @@ body {
   display: inline-block;
   transition: opacity 0.8s ease-in-out;
 }  */
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  display: inline-block;
+  animation: marquee 15s linear infinite;
+}
+
+
+@keyframes vertical-marquee {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.animate-vertical-marquee {
+  animation: vertical-marquee 10s linear infinite;
+}
+
