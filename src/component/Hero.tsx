@@ -4,6 +4,11 @@ import Container from "@/layer/Container";
 import { useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Text, OrbitControls } from "@react-three/drei";
+import { FaNode, FaReact } from "react-icons/fa";
+import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
+import { SiMongodb, SiRedux } from "react-icons/si";
+import { DiJavascript } from "react-icons/di";
+import Image from "next/image";
 
 export default function Hero() {
   const texts = ["Frontend Developer", "React Developer", "Next Enthusiast"];
@@ -24,19 +29,22 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, []);
 
-  // useEffect(() => {
-  //   const handleMouseMove = (e: MouseEvent) => {
-  //     setMousePosition({
-  //       x: (e.clientX / window.innerWidth - 0.5) * 20,
-  //       y: (e.clientY / window.innerHeight - 0.5) * 20,
-  //     });
-  //   };
-  //   window.addEventListener("mousemove", handleMouseMove);
-  //   return () => window.removeEventListener("mousemove", handleMouseMove);
-  // }, []);
+  const handleScrollToProjects = () => {
+    const section = document.getElementById("projects");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleScrollToContact = () => {
+    const section = document.getElementById("contact");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
-    <div className=" bg-[url('/simple.jpg')] bg-cover bg-center min-h-screen  text-white overflow-hidden relative">
+    <div className=" bg-[url('/simple.jpg')] bg-cover bg-center min-h-screen  text-white overflow-hidden relative select-none">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none bg-black/45 "></div>
       {/* Content */}
@@ -101,36 +109,58 @@ export default function Hero() {
 
             {/* Buttons */}
             <div className="flex justify-center text-center gap-6">
-              <a
-                href="#projects"
+              <button
+                onClick={handleScrollToProjects}
+
                 className="px-8 py-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 
         text-white font-semibold uppercase tracking-wide shadow-lg 
         hover:bg-blue-600 hover:scale-105 transition-all duration-300"
               >
                 View My Projects
-              </a>
-              <a
-                href="#contact"
+              </button>
+              <button
+                onClick={handleScrollToContact}
                 className="px-8 py-4 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 text-white 
         font-semibold uppercase tracking-wide shadow-lg 
         hover:opacity-90 hover:scale-105 transition-all duration-300"
               >
                 Contact Me
-              </a>
+              </button>
             </div>
           </div>
 
           {/* Right-side vertical moving text */}
-          <div className="relative h-[400px] w-10 overflow-hidden flex flex-col items-center justify-center">
-            <div className="animate-vertical-marquee space-y-10 text-white font-semibold text-sm rotate-180">
-              <span className="block rotate-90">APP</span>
-              <span className="block rotate-90">WEBSITE</span>
-              <span className="block rotate-90">UX/UI</span>
-              <span className="block rotate-90">SAAS</span>
-              <span className="block rotate-90">SOFTWARE</span>
+          <div className="h-[400px] w-10 overflow-hidden flex flex-col items-center justify-center">
+            <div className="animate-vertical-marquee space-y-10 text-white text-3xl font-semibold  rotate-180">
+              <span className="block rotate-90 text-[#32a2b6dd]">
+                <FaReact />
+              </span>
+              <span className="block rotate-90 text-black">
+                <RiNextjsFill />
+              </span>
+              <span className="block rotate-90 text-[#5ecadd]">
+                <RiTailwindCssFill />
+              </span>
+              <span className="block rotate-90 text-[#8f37d2]">
+                <SiRedux />
+              </span>
+              <span className="block rotate-90 text-yellow-500">
+                <DiJavascript />
+              </span>
+              <span className="block rotate-90 text-4xl text-green-400">
+                <FaNode />
+              </span>
+              <span className="block rotate-90 text-green-600">
+                <SiMongodb />
+              </span>
             </div>
           </div>
         </Container>
+
+        {/* figma */}
+        <div className="absolute top-1/2 left-48 -translate-y-1/2 ">
+          <img src="/figma.svg" alt="image" className="w-12 h-12 animate-figma " />
+        </div>
 
         {/* Scroll Down */}
         <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 text-white animate-bounce">

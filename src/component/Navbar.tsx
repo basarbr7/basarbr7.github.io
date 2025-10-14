@@ -15,9 +15,10 @@ const navItems = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMode, setIsMode] = useState(false)
 
   const handleMode = ()=>{
-    setIsOpen(!isOpen)
+    setIsMode(!isMode)
   }
 
   return (
@@ -45,11 +46,11 @@ export default function Navbar() {
         {/* dark light */}
         <div onClick={handleMode} className=" w-14 px-2 py-[2px] border border-gray-400 rounded-full hover:border-red-500 bg-gray-300 transition cursor-pointer">
          <motion.div
-          animate={{x: isOpen? 20: 0}}
+          animate={{x: isMode? 20: 0}}
           transition={{ stiffness: 300, damping: 20 }}
          >
            {
-            isOpen ? 
+            isMode ? 
           <Moon size={18} /> :<Sun size={18}/>
           }
          </motion.div>

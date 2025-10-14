@@ -11,7 +11,7 @@ export default function Projects() {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   return (
-    <div className="relative py-32 bg-gradient-to-br from-slate-950 via-black to-slate-950 text-white overflow-hidden">
+    <div id="projects" className="relative py-32 bg-gradient-to-br from-slate-950 via-black to-slate-950 text-white overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -left-48 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" />

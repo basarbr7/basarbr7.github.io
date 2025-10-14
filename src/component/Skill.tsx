@@ -69,7 +69,7 @@ export default function Skills() {
           transition={{ duration: 0.5 }}
           className="text-3xl md:text-4xl font-bold mb-10 text-gray-900 dark:text-white"
         >
-          My <span className="text-blue-500">Skills</span>
+          My<span className="text-blue-500">Skills</span>
         </motion.h2>
 
         {/* Category Buttons */}
