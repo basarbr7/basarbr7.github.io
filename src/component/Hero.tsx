@@ -8,13 +8,16 @@ import { FaNode, FaReact } from "react-icons/fa";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiMongodb, SiRedux } from "react-icons/si";
 import { DiJavascript } from "react-icons/di";
-import Image from "next/image";
+import { archivo } from "@/fonts";
+
+
 
 export default function Hero() {
   const texts = ["Frontend Developer", "React Developer", "Next Enthusiast"];
   const [textIndex, setTextIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -55,7 +58,7 @@ export default function Hero() {
             {/* Typing & marquee section */}
             <div className="max-w-4xl mx-auto h-10 flex items-center justify-between">
               {/* Typing Text */}
-              <div className="flex items-center max-w-1/2 ml-40  relative">
+              <div className={`flex items-center max-w-1/2 ml-40  relative ${archivo.className}`} >
                 <span
                   className="text-2xl md:text-4xl font-extrabold inline-block whitespace-nowrap overflow-hidden transition-all duration-500 ease-in-out text-white"
                   style={{

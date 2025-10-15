@@ -1,31 +1,45 @@
 import Container from "@/layer/Container";
 import { Facebook, Github, LinkedinIcon, Mail } from "lucide-react";
 import Image from "next/image";
-import { FaFacebook } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { archivo } from "@/fonts";
+import Title from "@/layer/Title";
 
 export default function About() {
   return (
     <div className="relative px-6 py-20 bg-[#45484c] text-white">
       <Container>
         {/* heading */}
-        <div className="flex flex-col justify-center items-center text-center mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-3xl md:text-4xl font-bold mb-10 text-gray-900 dark:text-white"
-          >
-            About<span className="text-blue-500 ">Me</span>
-          </motion.h2>
-          <p className="text-xl text-[#c7c7c7]">
+        <motion.div
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <Title sparkClassName="text-black!" className="text-black!">
+            Introduction
+          </Title>
+
+          <h2 className="text-2xl md:text-4xl font-black mb-3 leading-tight">
+           
+            <span className={`bg-gradient-to-r from-cyan-600 to-purple-400  bg-clip-text text-transparent animate-gradient ${archivo.className}`}>
+              About Me
+            </span>
+          </h2>
+
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             Here you will find more information about me and what I do.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-x-10 items-center justify-center">
           {/* Image */}
-          <div className="lg:px-24 py-5 md:col-span-5 flex flex-col justify-center items-center text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="lg:px-24 py-5 md:col-span-5 flex flex-col justify-center items-center text-center">
             <div
               className="border-[1px] border-gray-600 p-[1px] "
               style={{ boxShadow: "0 2px 0 8px" }}
@@ -39,10 +53,16 @@ export default function About() {
               />
             </div>
             <p className="mt-7 text-gray-300 italic">Md Abul Basar</p>
-          </div>
+          </motion.div>
 
           {/* Text */}
-          <div className="md:col-span-7">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="md:col-span-7"
+          >
             <h2 className="text-lg md:text-2xl font-bold mb-4 text-[#009e66]">
               Who am I?
             </h2>
@@ -59,7 +79,12 @@ export default function About() {
               front-end development to build fast, accessible, and user-friendly
               web applications.
             </p>
-            <div className="pt-7 flex flex-wrap gap-y-6 justify-between items-center text-gray-400">
+            <motion.div
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="pt-7 flex flex-wrap gap-y-6 justify-between items-center text-gray-400"
+            >
               <div className="flex flex-col sm:flex-row gap-4 md:gap-20">
                 <div>
                   <p className="mb-3">Name: Basar</p>
@@ -76,8 +101,8 @@ export default function About() {
                 <Github />
                 <Facebook />
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </Container>
     </div>

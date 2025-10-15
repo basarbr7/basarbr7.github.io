@@ -3,15 +3,26 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
-import { ExternalLink, Github, Eye, Sparkles, ArrowUpRight } from "lucide-react";
+import {
+  ExternalLink,
+  Github,
+  Eye,
+  Sparkles,
+  ArrowUpRight,
+} from "lucide-react";
 import { projects } from "@/data/projects";
 import Container from "@/layer/Container";
+import Title from "@/layer/Title";
+import { archivo } from "@/fonts";
 
 export default function Projects() {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   return (
-    <div id="projects" className="relative py-32 bg-gradient-to-br from-slate-950 via-black to-slate-950 text-white overflow-hidden">
+    <div
+      id="projects"
+      className="relative py-20 bg-gradient-to-br from-slate-950 via-black to-slate-950 text-white overflow-hidden"
+    >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -left-48 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" />
@@ -23,33 +34,24 @@ export default function Projects() {
         {/* Header Section */}
         <motion.div
           className="text-center mb-20"
-          initial={{ opacity: 0, y: -30 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <motion.div
-            className="inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 rounded-full border border-cyan-500/20 mb-8"
-            initial={{ scale: 0.8, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <Sparkles className="w-4 h-4 text-cyan-400 animate-pulse" />
-            <span className="text-sm font-medium bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-              Featured Work
-            </span>
-          </motion.div>
+          <Title sparkClassName="text-black!" className="text-black!">
+            Featured Work
+          </Title>
 
-          <h2 className="text-2xl md:text-5xl font-black mb-6 leading-tight">
-            My
-            <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient">
-              Projects
+          <h2 className="text-2xl md:text-4xl font-black mb-3 leading-tight">
+            <span className={`bg-gradient-to-r from-cyan-600 to-purple-400  bg-clip-text text-transparent animate-gradient ${archivo.className}`}>
+              My Projects
             </span>
           </h2>
-          
+
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Crafting digital experiences that push boundaries and deliver results
+            Crafting digital experiences that push boundaries and deliver
+            results
           </p>
         </motion.div>
 
@@ -61,14 +63,17 @@ export default function Projects() {
               className="group relative"
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.15, duration: 0.7, ease: "easeOut" }}
+              transition={{
+                delay: index * 0.15,
+                duration: 0.7,
+                ease: "easeOut",
+              }}
               viewport={{ once: true }}
               onMouseEnter={() => setHoveredId(project.id)}
               onMouseLeave={() => setHoveredId(null)}
             >
               {/* Card Container */}
               <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-slate-900/80 to-slate-950/80 border border-slate-800/50 backdrop-blur-sm transition-all duration-500 hover:scale-[1.02] hover:border-cyan-500/50 hover:shadow-2xl hover:shadow-cyan-500/20">
-                
                 {/* Animated Gradient Border */}
                 <div className="absolute inset-0 rounded-3xl transition-opacity duration-500 blur-xl -z-10" />
 
@@ -81,14 +86,18 @@ export default function Projects() {
                     height={300}
                     className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-y-120 group-hover:scale-x-110 rounded-md group-hover:rounded-xl"
                   />
-                  
+
                   {/* Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
-                  
+
                   {/* Floating Action Buttons */}
-                  <div className={`absolute top-4 right-4 flex gap-2 transition-all duration-500 ${
-                    hoveredId === project.id ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"
-                  }`}>
+                  <div
+                    className={`absolute top-4 right-4 flex gap-2 transition-all duration-500 ${
+                      hoveredId === project.id
+                        ? "opacity-100 translate-x-0"
+                        : "opacity-0 translate-x-4"
+                    }`}
+                  >
                     <motion.a
                       href={project.link}
                       target="_blank"
@@ -152,7 +161,7 @@ export default function Projects() {
                   >
                     <span className="relative z-10">View Project</span>
                     <ArrowUpRight className="w-4 h-4 relative z-10 transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
-                    
+
                     {/* Button Shine Effect */}
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover/btn:translate-x-[200%] transition-transform duration-1000" />
                   </motion.a>
@@ -183,28 +192,12 @@ export default function Projects() {
           >
             <span className="relative z-10">Explore All Projects</span>
             <ArrowUpRight className="w-5 h-5 relative z-10 group-hover:rotate-45 transition-transform duration-300" />
-            
+
             {/* Button Animation */}
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
           </motion.button>
         </motion.div>
       </Container>
-
-      {/* <style jsx global>{`
-        @keyframes gradient {
-          0%, 100% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-        }
-        
-        .animate-gradient {
-          background-size: 200% 200%;
-          animation: gradient 3s ease infinite;
-        }
-      `}</style> */}
     </div>
   );
 }

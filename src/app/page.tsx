@@ -7,6 +7,7 @@ import About from "@/component/About";
 import Skills from "@/component/Skill";
 import Projects from "@/component/Projects";
 import Contact from "@/component/Contact";
+import FAQ from "@/component/FAQ";
 
 export default function Layout() {
  
@@ -19,6 +20,7 @@ export default function Layout() {
         <Skills />
         <Projects />
         <Contact/>
+        <FAQ/>
 
     </div>
   );
