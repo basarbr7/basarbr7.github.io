@@ -21,7 +21,7 @@ export default function Projects() {
   return (
     <div
       id="projects"
-      className="relative py-20 bg-gradient-to-br from-slate-950 via-black to-slate-950 text-white overflow-hidden"
+      className="relative py-20 bg-[#fcfcfc] text-white overflow-hidden"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

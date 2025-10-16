@@ -15,7 +15,7 @@ export default function Contact(): JSX.Element {
   };
 
   return (
-    <section id="contact" className="min-h-screen py-20 px-6 bg-gray-50">
+    <div id="contact" className="min-h-screen py-20 px-6 bg-gray-100">
       <Container>
         {/* Header */}
         <motion.div
@@ -221,6 +221,6 @@ export default function Contact(): JSX.Element {
           </motion.div>
         </div>
       </Container>
-    </section>
+    </div>
   );
 }

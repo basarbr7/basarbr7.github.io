@@ -71,6 +71,25 @@ export default function FAQ() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  // Animation Variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.12, delayChildren: 0.3 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40, scale: 0.97 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
   return (
     <div className="py-20 px-4 relative overflow-hidden">
       <Container className="relative z-10">
@@ -88,43 +107,57 @@ export default function FAQ() {
 
           <h2 className="text-2xl md:text-4xl font-black mb-3 leading-tight">
             <span
-              className={`bg-gradient-to-r from-cyan-600 to-purple-400  bg-clip-text text-transparent animate-gradient ${archivo.className}`}
+              className={`bg-gradient-to-r from-cyan-600 to-purple-400 bg-clip-text text-transparent animate-gradient ${archivo.className}`}
             >
               Frequently Asked Questions
             </span>
           </h2>
 
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-             Everything you need to know about working with me. Can't find what
+            Everything you need to know about working with me. Can't find what
             you're looking for? Feel free to reach out!
           </p>
         </motion.div>
 
-        {/* FAQ Items */}
-        <div className="space-y-4">
+        {/* FAQ List */}
+        <motion.div
+          className="max-w-3xl mx-auto space-y-4"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
           {faqs.map((faq, index) => (
-            <div
+            <motion.div
               key={index}
-              className="group bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all duration-300"
+              variants={{itemVariants}}
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 200, damping: 35, duration: 0.8 }}
+              className="bg-white rounded-2xl shadow-md border border-gray-200 hover:shadow-xl transition overflow-hidden"
             >
               <button
                 onClick={() => toggleQuestion(index)}
-                className="w-full px-6 py-5 flex items-start gap-4 text-left hover:bg-slate-800/70 transition-colors"
+                className="w-full p-5 flex items-start gap-4 text-left transition-colors cursor-pointer"
               >
                 {/* Icon */}
-                <div
-                  className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${
-                    openIndex === index
-                      ? "bg-gradient-to-br from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/50"
-                      : "bg-slate-700/50 text-purple-400 group-hover:bg-slate-700"
-                  }`}
+                <motion.div
+                  transition={{ duration: 0.4 }}
+                  className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center bg-slate-800"
                 >
-                  {faq.icon}
-                </div>
+                  <motion.div
+                    animate={{
+                      color: openIndex === index ? "#fff" : "#a855f7",
+                      scale: openIndex === index ? 1.1 : 1,
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {faq.icon}
+                  </motion.div>
+                </motion.div>
 
                 {/* Question */}
                 <div className="flex-1 min-w-0">
-                  <h3 className="text-lg font-semibold text-white group-hover:text-purple-400 transition-colors">
+                  <h3 className="text-lg font-semibold text-black group-hover:text-purple-400 transition-colors">
                     {faq.question}
                   </h3>
                 </div>
@@ -140,23 +173,31 @@ export default function FAQ() {
               </button>
 
               {/* Answer */}
-              <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={
                   openIndex === index
-                    ? "max-h-96 opacity-100"
-                    : "max-h-0 opacity-0"
-                }`}
+                    ? { height: "auto", opacity: 1 }
+                    : { height: 0, opacity: 0 }
+                }
+                transition={{ duration: 0.4, ease: "easeInOut" }}
               >
                 <div className="px-6 pb-6 pl-20">
-                  <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
+                  <p className="text-gray-500 leading-relaxed">{faq.answer}</p>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* CTA Section */}
-        <div className="mt-16 text-center">
+        <motion.div
+          className="mt-16 text-center"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           <div className="inline-block bg-gradient-to-r from-slate-800 to-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8">
             <h3 className="text-2xl font-bold text-white mb-3">
               Still have questions?
@@ -171,7 +212,7 @@ export default function FAQ() {
               <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </button>
           </div>
-        </div>
+        </motion.div>
       </Container>
     </div>
   );
