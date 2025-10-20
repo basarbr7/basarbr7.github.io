@@ -5,7 +5,7 @@ import Container from "@/layer/Container";
 import Title from "@/layer/Title";
 import { motion } from "framer-motion";
 import { ShieldCheck } from "lucide-react";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import {
   SiReact,
   SiNextdotjs,

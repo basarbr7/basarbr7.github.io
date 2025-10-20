@@ -79,13 +79,13 @@ export default function FAQ() {
   };
 
   // Animation Variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.12, delayChildren: 0.3 },
-    },
-  };
+  // const containerVariants = {
+  //   hidden: { opacity: 0 },
+  //   visible: {
+  //     opacity: 1,
+  //     transition: { staggerChildren: 0.12, delayChildren: 0.3 },
+  //   },
+  // };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 40, scale: 0.97 },

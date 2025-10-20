@@ -7,7 +7,6 @@ import {
   ExternalLink,
   Github,
   Eye,
-  Sparkles,
   ArrowUpRight,
 } from "lucide-react";
 import { projects } from "@/data/projects";
