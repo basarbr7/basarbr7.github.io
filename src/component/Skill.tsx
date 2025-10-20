@@ -4,6 +4,7 @@ import { archivo } from "@/fonts";
 import Container from "@/layer/Container";
 import Title from "@/layer/Title";
 import { motion } from "framer-motion";
+import { ShieldCheck } from "lucide-react";
 import { useRef, useState } from "react";
 import {
   SiReact,
@@ -18,6 +19,7 @@ import {
   SiMui,
   SiMysql,
   SiThreedotjs,
+  SiTypescript,
 } from "react-icons/si";
 
 interface Skill {
@@ -40,32 +42,37 @@ const skills: Skill[] = [
   {
     name: "JavaScript",
     icon: <SiJavascript className="text-yellow-400" />,
-    category: "Frontend",
+    category: "Programming",
   },
   {
-    name: "Redux",
+    name: "TypeScript",
+    icon: <SiTypescript className="text-green-400" />,
+    category: "Programming",
+  },
+  {
+    name: "Redux Toolkit",
     icon: <SiRedux className="text-purple-500" />,
     category: "Frontend",
   },
   {
     name: "Tailwind CSS",
     icon: <SiTailwindcss className="text-cyan-500" />,
-    category: "Styling",
+    category: "Frontend",
   },
   {
     name: "Bootstrap",
     icon: <SiBootstrap className="text-indigo-500" />,
-    category: "Styling",
+    category: "Frontend",
   },
   {
     name: "Material UI",
     icon: <SiMui className="text-blue-500" />,
-    category: "Styling",
+    category: "Frontend",
   },
   {
     name: "Shadcn/UI",
     icon: <span className="text-purple-500 font-bold">Sh</span>,
-    category: "Styling",
+    category: "Frontend",
   },
   {
     name: "Framer Motion",
@@ -97,6 +104,11 @@ const skills: Skill[] = [
     category: "Database",
   },
   {
+    name: "JWT",
+    icon: <ShieldCheck className="text-green-500" />,
+    category: "Backend",
+  },
+  {
     name: "MySQL",
     icon: <SiMysql className="text-blue-600" />,
     category: "Database",
@@ -108,10 +120,11 @@ export default function Skills() {
 
   const categories = [
     "All",
+    "Programming",
     "Frontend",
     "Backend",
     "Database",
-    "Styling",
+  
     "Animation",
   ];
 
@@ -122,7 +135,7 @@ export default function Skills() {
 
 
   return (
-    <div className="relative min-h-screen py-20 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+    <div id="skill" className="relative min-h-screen py-20 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
       <Container className=" text-center">
         <motion.div
           className="text-center mb-10"

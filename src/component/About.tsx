@@ -7,7 +7,7 @@ import Title from "@/layer/Title";
 
 export default function About() {
   return (
-    <div className="relative px-6 py-20 bg-[#45484c] text-white">
+    <div id="about" className="relative px-6 py-20 bg-[#45484c] text-white">
       <Container>
         {/* heading */}
         <motion.div
@@ -22,8 +22,9 @@ export default function About() {
           </Title>
 
           <h2 className="text-2xl md:text-4xl font-black mb-3 leading-tight">
-           
-            <span className={`bg-gradient-to-r from-cyan-600 to-purple-400  bg-clip-text text-transparent animate-gradient ${archivo.className}`}>
+            <span
+              className={`bg-gradient-to-r from-cyan-600 to-purple-400  bg-clip-text text-transparent animate-gradient ${archivo.className}`}
+            >
               About Me
             </span>
           </h2>
@@ -39,10 +40,14 @@ export default function About() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="lg:px-24 py-5 md:col-span-5 flex flex-col justify-center items-center text-center">
+            className="relative lg:px-24 py-5 md:col-span-5 flex flex-col justify-center items-center text-center overflow-hidden"
+          >
+            {/* Moving Background */}
+            
+
             <div
-              className="border-[1px] border-gray-600 p-[1px] "
-              style={{ boxShadow: "0 2px 0 8px" }}
+              className="border-[1px] border-gray-600 p-[1px] z-10"
+              style={{ boxShadow: "0 2px 0 8px rgba(0,0,0,0.3)" }}
             >
               <Image
                 src="/mypic.png"
@@ -52,8 +57,12 @@ export default function About() {
                 className="object-cover shadow-lg border-[1px] border-gray-600 p-3 max-w-[250px] sm:max-w-[300px]"
               />
             </div>
-            <p className="mt-7 text-gray-300 italic">Md Abul Basar</p>
+
+            <p className="mt-7 text-gray-300 italic z-10">Md Abul Basar</p>
           </motion.div>
+
+
+          
 
           {/* Text */}
           <motion.div

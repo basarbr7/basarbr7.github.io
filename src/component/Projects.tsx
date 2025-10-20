@@ -20,7 +20,7 @@ export default function Projects() {
 
   return (
     <div
-      id="projects"
+      id="project"
       className="relative py-20 bg-[#fcfcfc] text-white overflow-hidden"
     >
       {/* Animated Background Elements */}

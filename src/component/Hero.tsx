@@ -10,14 +10,11 @@ import { SiMongodb, SiRedux } from "react-icons/si";
 import { DiJavascript } from "react-icons/di";
 import { archivo } from "@/fonts";
 
-
-
 export default function Hero() {
   const texts = ["Frontend Developer", "React Developer", "Next Enthusiast"];
   const [textIndex, setTextIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -33,7 +30,7 @@ export default function Hero() {
   }, []);
 
   const handleScrollToProjects = () => {
-    const section = document.getElementById("projects");
+    const section = document.getElementById("project");
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
@@ -47,7 +44,10 @@ export default function Hero() {
   };
 
   return (
-    <div className=" bg-[url('/simple.jpg')] bg-cover bg-center min-h-screen  text-white overflow-hidden relative select-none">
+    <div
+      id="home"
+      className=" bg-[url('/simple.jpg')] bg-cover bg-center min-h-screen  text-white overflow-hidden relative select-none"
+    >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none bg-black/45 "></div>
       {/* Content */}
@@ -58,7 +58,9 @@ export default function Hero() {
             {/* Typing & marquee section */}
             <div className="max-w-4xl mx-auto h-10 flex items-center justify-between">
               {/* Typing Text */}
-              <div className={`flex items-center max-w-1/2 ml-40  relative ${archivo.className}`} >
+              <div
+                className={`flex items-center max-w-1/2 ml-40  relative ${archivo.className}`}
+              >
                 <span
                   className="text-2xl md:text-4xl font-extrabold inline-block whitespace-nowrap overflow-hidden transition-all duration-500 ease-in-out text-white"
                   style={{
@@ -114,7 +116,6 @@ export default function Hero() {
             <div className="flex justify-center text-center gap-6">
               <button
                 onClick={handleScrollToProjects}
-
                 className="px-8 py-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 
         text-white font-semibold uppercase tracking-wide shadow-lg 
         hover:bg-blue-600 hover:scale-105 transition-all duration-300"
@@ -162,7 +163,11 @@ export default function Hero() {
 
         {/* figma */}
         <div className="absolute top-1/2 left-48 -translate-y-1/2 ">
-          <img src="/figma.svg" alt="image" className="w-12 h-12 animate-figma " />
+          <img
+            src="/figma.svg"
+            alt="image"
+            className="w-12 h-12 animate-figma "
+          />
         </div>
 
         {/* Scroll Down */}

@@ -1,7 +1,14 @@
 "use client";
 
 import { JSX, useState } from "react";
-import { ChevronDown, Code, Briefcase, Mail, Coffee } from "lucide-react";
+import {
+  ChevronDown,
+  Code,
+  Briefcase,
+  Mail,
+  Coffee,
+  ArrowUpRight,
+} from "lucide-react";
 import Container from "@/layer/Container";
 import { motion } from "framer-motion";
 import Title from "@/layer/Title";
@@ -90,8 +97,15 @@ export default function FAQ() {
     },
   };
 
+  const handleScrollToContact = () => {
+  const section = document.getElementById("contact");
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
   return (
-    <div className="py-20 px-4 relative overflow-hidden">
+    <div id="faq" className="py-20 px-4 relative overflow-hidden">
       <Container className="relative z-10">
         {/* Section Header */}
         <motion.div
@@ -122,17 +136,23 @@ export default function FAQ() {
         {/* FAQ List */}
         <motion.div
           className="max-w-3xl mx-auto space-y-4"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          // variants={containerVariants}
+          initial={{ opacity: 0, y: 50}}
+          whileInView={{opacity: 1, y: 0}}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
         >
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
-              variants={{itemVariants}}
+              variants={{ itemVariants }}
               whileHover={{ scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 200, damping: 35, duration: 0.8 }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 35,
+                duration: 0.8,
+              }}
               className="bg-white rounded-2xl shadow-md border border-gray-200 hover:shadow-xl transition overflow-hidden"
             >
               <button
@@ -198,19 +218,26 @@ export default function FAQ() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="inline-block bg-gradient-to-r from-slate-800 to-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-white mb-3">
+          <div className="inline-block bg-gray-100 rounded-2xl shadow-md border border-gray-100 p-8">
+            <h3 className="text-2xl font-bold text-black mb-3">
               Still have questions?
             </h3>
-            <p className="text-gray-400 mb-6 max-w-md mx-auto">
+            <p className="text-gray-600 mb-6 max-w-md mx-auto">
               I'd love to hear about your project and discuss how we can work
               together.
             </p>
-            <button className="group relative inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-full font-semibold overflow-hidden transition-all hover:shadow-lg hover:shadow-purple-500/50 hover:scale-105">
+            <motion.button
+              className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full text-white font-bold text-lg hover:shadow-2xl hover:shadow-purple-500/50 transition-all relative overflow-hidden cursor-pointer "
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={handleScrollToContact}
+            >
               <span className="relative z-10">Get in Touch</span>
-              <Mail className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" />
-              <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            </button>
+              <ArrowUpRight className="w-5 h-5 relative z-10 group-hover:rotate-45 transition-transform duration-300" />
+
+              {/* Button Animation */}
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+            </motion.button>
           </div>
         </motion.div>
       </Container>

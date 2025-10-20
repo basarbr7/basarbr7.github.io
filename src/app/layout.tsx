@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/component/Navbar";
 import { roboto } from "@/fonts";
+import Footer from "@/component/Footer";
 
 
 
@@ -17,7 +18,8 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
         className={`${roboto.className} antialiased`}
       >
         <Navbar/>
-        <main className="pt-10">{children}</main>
+        <main className="pt-0">{children}</main>
+        <Footer/>
       </body>
     </html>
   );
