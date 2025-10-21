@@ -124,7 +124,6 @@ export default function Skills() {
     "Frontend",
     "Backend",
     "Database",
-  
     "Animation",
   ];
 

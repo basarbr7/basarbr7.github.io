@@ -34,11 +34,11 @@ export default function FAQ() {
       icon: <Code className="w-5 h-5" />,
       question: "What technologies do you work with?",
       answer:
-        "I&apos;m proficient in JavaScript/TypeScript, React, Next.js, Node.js, Express, MongoDB, PostgreSQL, Tailwind CSS, and various other modern web technologies. I&apos;m always learning and adapting to new tools and frameworks to deliver the best solutions.",
+        "I'm proficient in JavaScript/TypeScript, React, Next.js, Node.js, Express, MongoDB, PostgreSQL, Tailwind CSS, and various other modern web technologies. I&apos;m always learning and adapting to new tools and frameworks to deliver the best solutions.",
     },
     {
       icon: <Coffee className="w-5 h-5" />,
-      question: "What&apos;s your development process?",
+      question: "What's your development process?",
       answer:
         "I follow an agile approach: starting with discovery and planning, moving through design and prototyping, then development with regular check-ins, testing, and finally deployment with ongoing support. Communication and collaboration are key throughout the entire process.",
     },
@@ -52,13 +52,13 @@ export default function FAQ() {
       icon: <Briefcase className="w-5 h-5" />,
       question: "Do you work on existing projects?",
       answer:
-        "Absolutely! I&apos;m happy to help with bug fixes, feature additions, performance optimization, or complete redesigns of existing projects. I can work with your current tech stack or suggest improvements where beneficial.",
+        "Absolutely! I'm happy to help with bug fixes, feature additions, performance optimization, or complete redesigns of existing projects. I can work with your current tech stack or suggest improvements where beneficial.",
     },
     {
       icon: <Coffee className="w-5 h-5" />,
       question: "Are you available for freelance work?",
       answer:
-        "Yes, I&apos;m currently available for freelance projects and contract work. I'm open to both short-term and long-term collaborations. Feel free to reach out to discuss your project requirements and see how we can work together.",
+        "Yes, I'm currently available for freelance projects and contract work. I'm open to both short-term and long-term collaborations. Feel free to reach out to discuss your project requirements and see how we can work together.",
     },
     {
       icon: <Code className="w-5 h-5" />,
@@ -68,7 +68,7 @@ export default function FAQ() {
     },
     {
       icon: <Mail className="w-5 h-5" />,
-      question: "What&apos;s the best way to get in touch?",
+      question: "What's the best way to get in touch?",
       answer:
         "The easiest way to reach me is through the contact form on this site or via email. I typically respond within 24 hours. For urgent inquiries, you can also connect with me on LinkedIn or schedule a call.",
     },
@@ -128,8 +128,8 @@ export default function FAQ() {
           </h2>
 
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Everything you need to know about working with me. Can&apos;t find what
-            you&apos;re looking for? Feel free to reach out!
+            {`Everything you need to know about working with me. Can't find what
+            you're looking for? Feel free to reach out!`}
           </p>
         </motion.div>
 
@@ -223,8 +223,8 @@ export default function FAQ() {
               Still have questions?
             </h3>
             <p className="text-gray-600 mb-6 max-w-md mx-auto">
-              I&apos;d love to hear about your projet and discuss how we can work
-              together.
+              {`I"d love to hear about your projet and discuss how we can work
+              together.`}
             </p>
             <motion.button
               className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full text-white font-bold text-lg hover:shadow-2xl hover:shadow-purple-500/50 transition-all relative overflow-hidden cursor-pointer "
