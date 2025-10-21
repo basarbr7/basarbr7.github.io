@@ -6,6 +6,7 @@ import Container from "@/layer/Container";
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import Title from "@/layer/Title";
 import { IoLogoWhatsapp } from "react-icons/io";
+import TextField from '@mui/material/TextField';
 
 export default function Contact(): JSX.Element {
   // Optional: Handle form submission
@@ -41,11 +42,11 @@ export default function Contact(): JSX.Element {
         </motion.div>
 
         {/* Content Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 md:space-x-20 space-y-5 md:space-y-0">
+        <div className="grid grid-cols-1 md:grid-cols-12 md:space-x-5 xl:space-x-20 space-y-5 md:space-y-0">
           {/* Contact Info */}
-          <div className="md:col-span-5 flex flex-col items-center justify-center space-y-5 md:space-y-10 text-black ml-10">
+          <div className="order-2 md:order-1 md:col-span-5 flex flex-col items-center justify-center space-y-5 md:space-y-10 text-black xl:ml-10">
             <motion.div
-              className="w-full p-6 flex flex-col items-start space-y-3 bg-white/20 rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm border border-white/30 group"
+              className="w-full p-6 flex flex-col items-start bg-white/20 rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm border border-white/30 group"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
@@ -55,12 +56,12 @@ export default function Contact(): JSX.Element {
                 href="https://wa.me/8801518403693"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start justify-around w-full"
+                className="flex gap-x-3 items-start justify-around w-full"
               >
                 <div className=" bg-blue-500/20 p-3 rounded-lg">
                   <IoLogoWhatsapp className="w-6 h-6 text-green-600"/>
                 </div>
-                <div className=" text-gray-600">
+                <div className=" text-gray-600 text-sm sm:text-lg">
                   <h3 className="text-black font-semibold text-lg mb-2">
                     WhatsUp
                   </h3>
@@ -79,7 +80,7 @@ export default function Contact(): JSX.Element {
             </motion.div>
 
             <motion.div
-              className="w-full p-6 flex flex-col items-start space-y-3 bg-white/20 rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm border border-white/30 group"
+              className="w-full p-6 flex flex-col items-start bg-white/20 rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm border border-white/30 group"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
@@ -89,13 +90,13 @@ export default function Contact(): JSX.Element {
                 href="mailto:basarbr7@gmail.com" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start justify-around w-full "
+                className="flex gap-x-3 items-start justify-around w-full "
               >
                 <div className="bg-purple-500/20 p-3 rounded-lg">
                   <Mail className="w-6 h-6 text-purple-400" />
                   
                 </div>
-                <div className="text-gray-600">
+                <div className="text-gray-600 text-sm sm:text-lg">
                   <h3 className="text-black font-semibold text-lg mb-2">
                     Email Us
                   </h3>
@@ -120,11 +121,11 @@ export default function Contact(): JSX.Element {
               transition={{ delay: 0.5, duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <div className="flex items-start justify-around w-full ">
+              <div className="flex gap-x-3 items-start justify-around w-full ">
                 <div className="bg-pink-500/20 p-3 rounded-lg">
                   <MapPin className="w-6 h-6 text-pink-400" />
                 </div>
-                <div className="text-gray-600">
+                <div className="text-gray-600 text-sm sm:text-lg">
                   <h3 className="text-black font-semibold text-lg mb-2">
                     Visit Us
                   </h3>
@@ -149,62 +150,89 @@ export default function Contact(): JSX.Element {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
             viewport={{ once: true }}
-            className="relative md:col-span-7 w-full py-6 px-10 flex items-center bg-white/20 rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm border border-white/30 font-roboto ">
+            className="order-1 md:order-2 relative md:col-span-7 w-full py-6 px-10 flex items-center bg-white/20 rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm border border-white/30 font-roboto mb-20 md:mb-0 ">
             <form
               className="relative z-10 space-y-6 w-full text-gray-900"
               onSubmit={handleSubmit}
             >
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-x-10 md:gap-y-0 gap-y-4">
-                <div className="col-span-6 space-y-2">
-                  <label htmlFor="name" className="text-black font-medium ">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-10 md:gap-y-0 gap-y-4">
+                <div className="col-span-6">
+                  <label htmlFor="name" className="text-black font-medium block mb-2">
                     Name
                   </label>
-                  <input
+                  <TextField
                     id="name"
-                    type="text"
-                    placeholder="Your Name"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:text-black focus:ring-1 focus:ring-blue-500 outline-none mt-1"
-                    required
+                    label="Your Name"
+                    variant="outlined"        
+                    fullWidth   
+                    size="small"                 
+                    required  
+                    sx={{
+                      "& .MuiInputBase-root": { padding: "4px 8px" },
+                      "& .MuiOutlinedInput-input": { padding: "6px 8px" },
+                      // "& .MuiInputLabel-root": { top: "-5px" },
+                    }}
                   />
                 </div>
-                <div className="col-span-6 space-y-2">
-                  <label htmlFor="email" className="text-black font-medium">
+                <div className="col-span-6">
+                  <label htmlFor="email" className="text-black font-medium block mb-2">
                     Email Address
                   </label>
-                  <input
+                  <TextField
                     id="email"
-                    type="email"
-                    placeholder="Your Email"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:text-black focus:ring-1 focus:ring-blue-500 outline-none mt-1"
-                    required
+                    label="Your Email"
+                    variant="outlined"        
+                    fullWidth  
+                    size="small" 
+                    required      
+                    sx={{
+                      "& .MuiInputBase-root": { padding: "4px 8px" },
+                      "& .MuiOutlinedInput-input": { padding: "6px 8px" },
+                      // "& .MuiInputLabel-root": { top: "-5px" },
+                    }}
                   />
+            
                 </div>
               </div>
 
-              <div className="w-full space-y-2">
-                <label htmlFor="subject" className="text-black font-medium">
+              <div className="w-full ">
+                <label htmlFor="subject" className="text-black font-medium block mb-2">
                   Subject
                 </label>
-                <input
-                  id="subject"
-                  type="text"
-                  placeholder="Enter Subject"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:text-black focus:ring-1 focus:ring-blue-500 outline-none mt-1"
-                  required
-                />
+                <TextField
+                    id="subject"
+                    label="Enter Subject"
+                    variant="outlined"        
+                    fullWidth   
+                    size="small"                 
+                    required  
+                    sx={{
+                      "& .MuiInputBase-root": { padding: "4px 8px" },
+                      "& .MuiOutlinedInput-input": { padding: "6px 8px" },
+                      // "& .MuiInputLabel-root": { top: "-5px" },
+                    }}
+                  />
               </div>
 
-              <div className="w-full space-y-2">
-                <label htmlFor="message" className="text-black font-medium ">
+              <div className="w-full ">
+                <label htmlFor="message" className="text-black font-medium block mb-2 ">
                   Message
                 </label>
                 <div>
-                  <textarea
+                 <TextField
                     id="message"
-                    rows={5}
-                    placeholder="Your Message"
-                    className="w-full px-4 py-2 border-[1px] border-gray-300 rounded-sm focus:border-[1px] focus:border-blue-500 outline-none transition-none mt-1"
-                    required
+                    label="Your Message"
+                    variant="outlined"        
+                    fullWidth   
+                    size="small"
+                    multiline
+                    rows={5}                 
+                    required  
+                    sx={{
+                      "& .MuiInputBase-root": { padding: "4px 8px" },
+                      "& .MuiOutlinedInput-input": { padding: "6px 8px" },
+                      // "& .MuiInputLabel-root": { top: "-5px" },
+                    }}
                   />
                 </div>
               </div>
