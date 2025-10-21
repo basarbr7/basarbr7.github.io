@@ -7,7 +7,7 @@ import Title from "@/layer/Title";
 
 export default function About() {
   return (
-    <div id="about" className="relative px-6 py-20 bg-[#45484c] text-white">
+    <div id="about" className="relative px-6 py-20 bg-[#ffffff] text-white border-b border-gray-200">
       <Container>
         {/* heading */}
         <motion.div
@@ -29,7 +29,7 @@ export default function About() {
             </span>
           </h2>
 
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-500 max-w-2xl mx-auto">
             Here you will find more information about me and what I do.
           </p>
         </motion.div>
@@ -40,7 +40,7 @@ export default function About() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="relative lg:px-24 py-5 md:col-span-5 flex flex-col justify-center items-center text-center overflow-hidden"
+            className="relative lg:px-24 py-5 md:col-span-5 flex flex-col justify-center items-center text-center overflow-hidden "
           >
             {/* Moving Background */}
             
@@ -58,7 +58,17 @@ export default function About() {
               />
             </div>
 
-            <p className="mt-7 text-gray-300 italic z-10">Md Abul Basar</p>
+            <p className="mt-7 text-gray-500 italic z-10">Md Abul Basar</p>
+
+            <motion.a
+              href="/cv.pdf"
+              download
+              whileHover={{ scale: 1.05, boxShadow: "0px 4px 15px rgba(37, 99, 235, 0.5)" }}
+              whileTap={{ scale: 0.95 }}
+              className="mt-20 inline-flex items-center gap-2 text-white bg-blue-700 px-6 py-3 rounded-md font-semibold hover:bg-blue-800 transition-colors"
+            >
+              <span>Download CV</span>
+            </motion.a>
           </motion.div>
 
 
@@ -75,11 +85,11 @@ export default function About() {
             <h2 className="text-lg md:text-2xl font-bold mb-4 text-[#009e66]">
               Who am I?
             </h2>
-            <h1 className="text-lg sm:text-2xl lg:text-3xl font-medium md:font-bold mb-10">
+            <h1 className="text-lg sm:text-2xl lg:text-3xl font-medium md:font-bold mb-10 text-gray-700">
               I&apos;m Basar, a visual Front-End Developer, building clean,
               user-friendly interfaces.
             </h1>
-            <p className="text-justify sm:text-left text-base sm:text-lg leading-relaxed text-[#9f9f9f] pb-7 border-b-[2px] border-[rgba(255,255,255,0.08)]">
+            <p className="text-justify sm:text-left text-base sm:text-lg leading-relaxed text-gray-600 pb-7 border-b-[2px] border-[rgba(255,255,255,0.08)]">
               I&apos;m Basar, a Front-End Web Developer based in Bangladesh. I
               specialize in building clean, responsive user interfaces using
               modern tools like React, Tailwind CSS, and Redux. I enjoy turning
@@ -92,7 +102,7 @@ export default function About() {
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="pt-7 flex flex-wrap gap-y-6 justify-between items-center text-gray-400"
+              className="pt-7 flex flex-wrap gap-y-6 justify-between items-center text-gray-500"
             >
               <div className="flex flex-col sm:flex-row gap-4 md:gap-20">
                 <div>

@@ -116,17 +116,13 @@ export default function Hero() {
             <div className="flex justify-center text-center gap-6">
               <button
                 onClick={handleScrollToProjects}
-                className="px-8 py-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 
-        text-white font-semibold uppercase tracking-wide shadow-lg 
-        hover:bg-blue-600 hover:scale-105 transition-all duration-300"
+                className="px-8 py-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 text-white font-semibold uppercase tracking-wide shadow-lg hover:bg-blue-600 hover:scale-105 transition-all duration-300"
               >
                 View My Projects
               </button>
               <button
                 onClick={handleScrollToContact}
-                className="px-8 py-4 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 text-white 
-        font-semibold uppercase tracking-wide shadow-lg 
-        hover:opacity-90 hover:scale-105 transition-all duration-300"
+                className="px-8 py-4 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold uppercase tracking-wide shadow-lg hover:opacity-90 hover:scale-105 transition-all duration-300"
               >
                 Contact Me
               </button>

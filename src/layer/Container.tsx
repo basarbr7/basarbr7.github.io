@@ -7,7 +7,7 @@ type Containerprops= {
 
 const Container = ({children, className}: Containerprops ) => {
   return (
-    <div className={`max-w-[1200px] mx-auto ${className}`}>{children}</div>
+    <div className={`max-w-[1200px] mx-auto px-4 ${className}`}>{children}</div>
   )
 }
 

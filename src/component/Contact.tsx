@@ -15,7 +15,7 @@ export default function Contact(): JSX.Element {
   };
 
   return (
-    <div id="contact" className="min-h-screen py-20 px-6 bg-gray-100">
+    <div id="contact" className="min-h-screen py-20 px-6 bg-gray-100 border-b border-gray-200">
       <Container>
         {/* Header */}
         <motion.div
