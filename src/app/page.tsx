@@ -8,6 +8,7 @@ import Skills from "@/component/Skill";
 import Projects from "@/component/Projects";
 import Contact from "@/component/Contact";
 import FAQ from "@/component/FAQ";
+import Animate from "@/component/Animate";
 
 export default function Layout() {
  
@@ -17,6 +18,7 @@ export default function Layout() {
       
         <Hero />
         <About />
+        {/* <Animate/> */}
         <Skills />
         <Projects />
         <Contact/>

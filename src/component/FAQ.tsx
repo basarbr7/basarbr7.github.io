@@ -105,7 +105,7 @@ export default function FAQ() {
 };
 
   return (
-    <div id="faq" className="py-20 px-4 relative overflow-hidden">
+    <div id="faq" className="py-20 px-4 relative overflow-hidden border-b border-gray-200">
       <Container className="relative z-10">
         {/* Section Header */}
         <motion.div

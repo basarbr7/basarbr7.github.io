@@ -16,7 +16,7 @@ export default function Contact(): JSX.Element {
   };
 
   return (
-    <div id="contact" className="min-h-screen py-20 px-6 bg-gray-100 border-b border-gray-200">
+    <div id="contact" className="min-h-screen py-20 bg-gray-100 border-b border-gray-200">
       <Container>
         {/* Header */}
         <motion.div
@@ -155,7 +155,7 @@ export default function Contact(): JSX.Element {
               className="relative z-10 space-y-6 w-full text-gray-900"
               onSubmit={handleSubmit}
             >
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-10 md:gap-y-0 gap-y-4">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-10 lg:gap-y-0 gap-y-6">
                 <div className="col-span-6">
                   <label htmlFor="name" className="text-black font-medium block mb-2">
                     Name
