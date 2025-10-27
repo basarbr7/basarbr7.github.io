@@ -43,6 +43,13 @@ export default function Hero() {
     }
   };
 
+  const handleScrollToAbout = () => {
+    const section = document.getElementById("about");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div
       id="home"
@@ -168,8 +175,8 @@ export default function Hero() {
       </div>
 
       {/* Scroll Down */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white animate-bounce">
-        <span className="text-3xl">⌄</span>
+      <div onClick={handleScrollToAbout} className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white animate-bounce">
+        <span  className="text-3xl">⌄</span>
       </div>
       </Container>
 

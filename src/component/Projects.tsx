@@ -3,12 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
-import {
-  ExternalLink,
-  Github,
-  Eye,
-  ArrowUpRight,
-} from "lucide-react";
+import { ExternalLink, Github, Eye, ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/projects";
 import Container from "@/layer/Container";
 import Title from "@/layer/Title";
@@ -17,10 +12,16 @@ import { archivo } from "@/fonts";
 export default function Projects() {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
+  const [visibleCount, setVisibleCount]  = useState<number>(6)
+
+  const handleShowMore = (): void => {
+    setVisibleCount((prev: number) => prev + 6); 
+  };
+
   return (
     <div
       id="project"
-      className="relative py-20 bg-[#fcfcfc] text-white overflow-hidden border-b border-gray-200"
+      className="relative py-20  bg-white text-white overflow-hidden border-b border-gray-200"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -43,7 +44,9 @@ export default function Projects() {
           </Title>
 
           <h2 className="text-2xl md:text-4xl font-black mb-3 leading-tight">
-            <span className={`bg-gradient-to-r from-cyan-600 to-purple-400  bg-clip-text text-transparent animate-gradient ${archivo.className}`}>
+            <span
+              className={`bg-gradient-to-r from-cyan-600 to-purple-400  bg-clip-text text-transparent animate-gradient ${archivo.className}`}
+            >
               My Projects
             </span>
           </h2>
@@ -56,7 +59,7 @@ export default function Projects() {
 
         {/* Projects Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {projects.slice(0, visibleCount).map((project, index) => (
             <motion.div
               key={project.id}
               className="group relative"
@@ -72,22 +75,22 @@ export default function Projects() {
               onMouseLeave={() => setHoveredId(null)}
             >
               {/* Card Container */}
-              <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-slate-900/80 to-slate-950/80 border border-slate-800/50 backdrop-blur-sm transition-all duration-500 hover:scale-[1.02] hover:border-cyan-500/50 hover:shadow-2xl hover:shadow-cyan-500/20">
+              <div className="relative rounded-xl overflow-hidden bg-gradient-to-br from-slate-900/80 to-slate-950/80 border border-slate-800/50 backdrop-blur-sm transition-all duration-500 hover:scale-[1.02] hover:border-cyan-500/50 hover:shadow-2xl hover:shadow-cyan-500/20 group ">
                 {/* Animated Gradient Border */}
                 <div className="absolute inset-0 rounded-3xl transition-opacity duration-500 blur-xl -z-10" />
 
                 {/* Image Container */}
-                <div className="relative h-56 p-5 overflow-hidden">
+                <div className="relative h-64 p-3 overflow-hidden bg-white">
                   <Image
                     src={project.image}
                     alt={project.title}
-                    width={500}
-                    height={300}
-                    className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-y-120 group-hover:scale-x-110 rounded-md group-hover:rounded-xl"
+                    width={350}
+                    height={298}
+                    className="object-cover w-full h-auto transition-transform duration-700 group-hover:scale-y-120 group-hover:scale-x-110 rounded-md group-hover:rounded-xl"
                   />
 
                   {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
+                  <div className="absolute inset-0 group-hover:bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
 
                   {/* Floating Action Buttons */}
                   <div
@@ -135,20 +138,6 @@ export default function Projects() {
                     {project.description}
                   </p>
 
-                  {/* Tech Stack */}
-                  <div className="flex flex-wrap gap-2 mb-5">
-                    {project.tech.map((tech, i) => (
-                      <motion.span
-                        key={i}
-                        className="text-xs font-medium bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-500/20 px-3 py-1.5 rounded-full text-cyan-300 hover:border-cyan-400/50 hover:shadow-lg hover:shadow-cyan-500/20 transition-all cursor-default"
-                        whileHover={{ scale: 1.1, y: -2 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        {tech}
-                      </motion.span>
-                    ))}
-                  </div>
-
                   {/* CTA Button */}
                   <motion.a
                     href={project.link}
@@ -185,6 +174,7 @@ export default function Projects() {
           viewport={{ once: true }}
         >
           <motion.button
+            onClick={handleShowMore}
             className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full text-white font-bold text-lg hover:shadow-2xl hover:shadow-purple-500/50 transition-all relative overflow-hidden"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
