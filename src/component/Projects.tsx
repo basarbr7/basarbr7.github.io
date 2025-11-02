@@ -80,7 +80,7 @@ export default function Projects() {
                 <div className="absolute inset-0 rounded-3xl transition-opacity duration-500 blur-xl -z-10" />
 
                 {/* Image Container */}
-                <div className="relative h-64 p-3 overflow-hidden bg-white">
+                <div className="relative h-64 p-3 overflow-hidden bg-white dark:bg-black">
                   <Image
                     src={project.image}
                     alt={project.title}

@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedinIn, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-100 text-black py-6 px-4">
+    <footer className="bg-gray-100 dark:bg-black py-6 px-4">
       <div className="text-center">
         <div className="my-container flex flex-col md:flex-row justify-between items-center">
           {/* Left side: Logo / Name */}

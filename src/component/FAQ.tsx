@@ -13,6 +13,7 @@ import Container from "@/layer/Container";
 import { motion } from "framer-motion";
 import Title from "@/layer/Title";
 import { archivo } from "@/fonts";
+import { useTheme } from "@/contextApi/ThemeContex";
 
 interface FAQ {
   icon: JSX.Element;
@@ -22,6 +23,7 @@ interface FAQ {
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const {theme}= useTheme()
 
   const faqs: FAQ[] = [
     {
@@ -105,7 +107,7 @@ export default function FAQ() {
 };
 
   return (
-    <div id="faq" className="py-20 px-4 relative overflow-hidden border-b border-gray-200">
+    <div id="faq" className="py-20 px-4 relative overflow-hidden dark:bg-black border-b  border-gray-200 dark:border-gray-600 ">
       <Container className="relative z-10">
         {/* Section Header */}
         <motion.div
@@ -153,7 +155,7 @@ export default function FAQ() {
                 damping: 35,
                 duration: 0.8,
               }}
-              className="bg-white rounded-2xl shadow-md border border-gray-200 hover:shadow-xl transition overflow-hidden"
+              className="bg-white dark:bg-neutral-800 rounded-2xl shadow-md border border-gray-200 dark:border-gray-600 hover:shadow-xl transition overflow-hidden"
             >
               <button
                 onClick={() => toggleQuestion(index)}
@@ -162,11 +164,11 @@ export default function FAQ() {
                 {/* Icon */}
                 <motion.div
                   transition={{ duration: 0.4 }}
-                  className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center bg-slate-800"
+                  className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center bg-slate-800 dark:bg-[#e6e6e6]"
                 >
                   <motion.div
                     animate={{
-                      color: openIndex === index ? "#fff" : "#a855f7",
+                      color: theme ==="dark" ? openIndex === index ? "#00000" : "#6d20b7" : openIndex === index ? "#fff" : "#a855f7",
                       scale: openIndex === index ? 1.1 : 1,
                     }}
                     transition={{ duration: 0.3 }}
@@ -177,7 +179,7 @@ export default function FAQ() {
 
                 {/* Question */}
                 <div className="flex-1 min-w-0">
-                  <h3 className="text-lg font-semibold text-black group-hover:text-purple-400 transition-colors">
+                  <h3 className="text-lg font-semibold text-black dark:text-white group-hover:text-purple-400 transition-colors">
                     {faq.question}
                   </h3>
                 </div>
@@ -203,7 +205,7 @@ export default function FAQ() {
                 transition={{ duration: 0.4, ease: "easeInOut" }}
               >
                 <div className="px-6 pb-6 pl-20">
-                  <p className="text-gray-500 leading-relaxed">{faq.answer}</p>
+                  <p className="text-gray-500 dark:text-gray-400 leading-relaxed">{faq.answer}</p>
                 </div>
               </motion.div>
             </motion.div>
@@ -218,11 +220,11 @@ export default function FAQ() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="inline-block bg-gray-100 rounded-2xl shadow-md border border-gray-100 p-8">
-            <h3 className="text-2xl font-bold text-black mb-3">
+          <div className="inline-block bg-gray-100 dark:bg-black rounded-2xl shadow-md border border-gray-100 dark:border-gray-600 p-8">
+            <h3 className="text-2xl font-bold text-black dark:text-white mb-3">
               Still have questions?
             </h3>
-            <p className="text-gray-600 mb-6 max-w-md mx-auto">
+            <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-md mx-auto">
               {`I"d love to hear about your projet and discuss how we can work
               together.`}
             </p>
