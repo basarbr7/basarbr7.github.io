@@ -112,7 +112,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-gray-700"
+          className="md:hidden text-gray-700 dark:text-gray-200 "
         >
            { isOpen ? "" : <Menu size={28} />}
         </button>
