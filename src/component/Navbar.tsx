@@ -1,12 +1,12 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { Menu, Moon, Sun, X } from "lucide-react";
 import Container from "@/layer/Container";
 import { figtree } from "@/fonts";
 import { RxCross2 } from "react-icons/rx";
+import { useTheme } from "@/contextApi/ThemeContex";
 
 const navItems = [
   { name: "Home", id: "home" },
@@ -19,12 +19,9 @@ const navItems = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isMode, setIsMode] = useState(false);
   const [scrolled, setScrolled] = useState(false)
+  const { theme, toggleTheme } = useTheme();
 
-  const handleMode = ()=>{
-    setIsMode(!isMode)
-  }
 
   const handleScrollClick = (id: string) => {
     const section = document.getElementById(id);
@@ -58,18 +55,24 @@ export default function Navbar() {
       }
     }, [isOpen])
 
+    
+
   return (
     <motion.nav
       animate={{ 
-        backgroundColor: scrolled 
-        ? "rgba(255, 255, 255, 1)"
-        : "rgba(117, 122, 129, 0.65) ",
-        color: scrolled ? "rgba(8, 8, 7)" : "rgba(255, 255, 255, 1 )"
+        backgroundColor: theme === "dark"
+          ? scrolled
+            ? "rgba(17, 17, 17, 1)"
+            : "rgb(64 68 71 / 64%)"
+          : scrolled
+            ? "rgba(255, 255, 255, 1)"
+            : "rgba(117, 122, 129, 0.65)",
+        color: theme==="dark" ? scrolled ?  "rgba(255, 255, 255, 1 )" : "rgba(255, 255, 255, 1 )" : scrolled ? "rgba(8, 8, 7)" : "rgba(255, 255, 255, 1 )"
        }}
       transition={{ duration: 0.6, ease: "easeInOut" }}
-      className="fixed left-0 top-0 w-full shadow-md z-50"
+      className={`dark:text-white fixed left-0 top-0 w-full shadow-md z-50 ${scrolled ? "header-animation" : "" } `}
     >
-      <Container className={`flex items-center justify-between py-4 ${figtree.className}`}>
+      <Container className={`flex items-center justify-between py-4 ${figtree.className} `}>
         {/* Logo */}
         <button  className="text-2xl font-bold text-blue-600">
           Basar
@@ -77,7 +80,7 @@ export default function Navbar() {
 
         <div className="flex items-center gap-20 md:gap-x-32 xl:gap-x-38">
           {/* Desktop Menu */}
-          <ul className={`hidden md:flex space-x-8 font-medium text-base`}>
+          <ul className={`hidden md:flex space-x-8 font-medium text-base `}>
             {navItems.map((item) => (
               <li key={item.name}>
                 <button
@@ -91,15 +94,15 @@ export default function Navbar() {
           </ul>
 
           {/* dark light */}
-          <motion.div onClick={handleMode} className={`hidden md:flex w-14 px-2 py-[4px] border border-gray-400 rounded-full  transition cursor-pointer `}
+          <motion.div onClick={toggleTheme} className={`hidden md:flex w-14 px-2 py-[4px] border border-gray-400 rounded-full  transition cursor-pointer `}
           >
             <motion.div
-              animate={{x: isMode? 20: 0}}
+              animate={{x: theme === "dark" ? 20: 0}}
               transition={{ stiffness: 300, damping: 20 }}
               className="flex items-center"
             >
               {
-                isMode ? 
+                theme === "dark" ? 
               <Moon size={18} /> :<Sun size={18}/>
               }
             </motion.div>
@@ -126,14 +129,14 @@ export default function Navbar() {
               </button>
 
               {/* dark light */}
-              <div onClick={handleMode} className="flex md:hidden w-14 px-2 py-[2px] border border-gray-400 rounded-full hover:border-red-500 bg-gray-300 transition cursor-pointer">
+              <div onClick={toggleTheme} className="flex md:hidden w-14 px-2 py-[2px] border border-gray-400 rounded-full hover:border-red-500 bg-gray-300 transition cursor-pointer">
               <motion.div
-                animate={{x: isMode? 20: 0}}
+                animate={{x: theme === "dark" ? 20: 0}}
                 transition={{ stiffness: 300, damping: 20 }}
                 className="flex items-center"
               >
                 {
-                  isMode ? 
+                  theme === "dark" ? 
                 <Moon size={18} /> :<Sun size={18}/>
                 }
               </motion.div>

@@ -134,7 +134,7 @@ export default function Skills() {
 
 
   return (
-    <div id="skill" className="relative min-h-screen py-20 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 border-b border-gray-200">
+    <div id="skill" className="relative min-h-screen py-20 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 border-b border-gray-200 dark:border-gray-600">
       <Container className=" text-center">
         <motion.div
           className="text-center mb-10"

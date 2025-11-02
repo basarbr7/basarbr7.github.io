@@ -7,6 +7,8 @@ import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import Title from "@/layer/Title";
 import { IoLogoWhatsapp } from "react-icons/io";
 import TextField from '@mui/material/TextField';
+import CustomTextField from "@/layer/CustomTextField";
+
 
 export default function Contact(): JSX.Element {
   // Optional: Handle form submission
@@ -16,7 +18,7 @@ export default function Contact(): JSX.Element {
   };
 
   return (
-    <div id="contact" className="min-h-screen py-20 bg-gray-100 border-b border-gray-200">
+    <div id="contact" className="min-h-screen py-20 bg-gray-100 dark:bg-[#060606] border-b border-gray-200 dark:border-gray-600">
       <Container>
         {/* Header */}
         <motion.div
@@ -46,7 +48,7 @@ export default function Contact(): JSX.Element {
           {/* Contact Info */}
           <div className="order-2 md:order-1 md:col-span-5 flex flex-col items-center justify-center space-y-5 md:space-y-10 text-black xl:ml-10">
             <motion.div
-              className="w-full p-6 flex flex-col items-start bg-white/20 rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm border border-white/30 group"
+              className="w-full p-6 flex flex-col items-start bg-white/20 dark:bg-transparent rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm border border-white/30 group"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
@@ -62,7 +64,7 @@ export default function Contact(): JSX.Element {
                   <IoLogoWhatsapp className="w-6 h-6 text-green-600"/>
                 </div>
                 <div className=" text-gray-600 text-sm sm:text-lg">
-                  <h3 className="text-black font-semibold text-lg mb-2">
+                  <h3 className="text-black dark:text-white font-semibold text-lg mb-2">
                     WhatsUp
                   </h3>
                   <p>+8801518403693</p>
@@ -74,13 +76,13 @@ export default function Contact(): JSX.Element {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5, duration: 0.8 }}
                 >
-                  <ArrowUpRight className="w-5 h-5 relative z-10 group-hover:rotate-45 transition-transform duration-300" />
+                  <ArrowUpRight className="w-5 h-5 dark:text-white relative z-10 group-hover:rotate-45 transition-transform duration-300" />
                 </motion.div>
               </a>
             </motion.div>
 
             <motion.div
-              className="w-full p-6 flex flex-col items-start bg-white/20 rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm border border-white/30 group"
+              className="w-full p-6 flex flex-col items-start bg-white/20 dark:bg-transparent rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm border border-white/30 group"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
@@ -97,7 +99,7 @@ export default function Contact(): JSX.Element {
                   
                 </div>
                 <div className="text-gray-600 text-sm sm:text-lg">
-                  <h3 className="text-black font-semibold text-lg mb-2">
+                  <h3 className="text-black dark:text-white font-semibold text-lg mb-2">
                     Email Us
                   </h3>
                   <p>basarbr7@gmail.com</p>
@@ -109,13 +111,13 @@ export default function Contact(): JSX.Element {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5, duration: 0.8 }}
                 >
-                  <ArrowUpRight className="w-5 h-5 relative z-10 group-hover:rotate-45 transition-transform duration-300" />
+                  <ArrowUpRight className="w-5 h-5 dark:text-white relative z-10 group-hover:rotate-45 transition-transform duration-300" />
                 </motion.div>
               </a>
             </motion.div>
 
             <motion.div
-              className="w-full p-6 flex flex-col items-start space-y-3 bg-white/20 rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm border border-white/30 group"
+              className="w-full p-6 flex flex-col items-start space-y-3 bg-white/20 dark:bg-transparent rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm border border-white/30 group"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
@@ -126,19 +128,19 @@ export default function Contact(): JSX.Element {
                   <MapPin className="w-6 h-6 text-pink-400" />
                 </div>
                 <div className="text-gray-600 text-sm sm:text-lg">
-                  <h3 className="text-black font-semibold text-lg mb-2">
+                  <h3 className="text-black dark:text-white font-semibold text-lg mb-2">
                     Visit Us
                   </h3>
                   <p>Road: 12/A, Block-C</p>
                   <p>Dhaka, Bangladesh</p>
                 </div>
                 <motion.div
-                  className="text-center"
+                  className="text-center "
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5, duration: 0.8 }}
                 >
-                  <ArrowUpRight className="w-5 h-5 relative z-10 group-hover:rotate-45 transition-transform duration-300" />
+                  <ArrowUpRight className="w-5 h-5 dark:text-white relative z-10 group-hover:rotate-45 transition-transform duration-300" />
                 </motion.div>
               </div>
             </motion.div>
@@ -150,98 +152,54 @@ export default function Contact(): JSX.Element {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
             viewport={{ once: true }}
-            className="order-1 md:order-2 relative md:col-span-7 w-full py-6 px-10 flex items-center bg-white/20 rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm border border-white/30 font-roboto mb-20 md:mb-0 ">
+            className="order-1 md:order-2 relative md:col-span-7 w-full py-6 px-10 flex items-center bg-white/20 dark:bg-black  rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm border border-white/30 font-roboto mb-20 md:mb-0 ">
             <form
-              className="relative z-10 space-y-6 w-full text-gray-900"
+              className="relative z-10 space-y-6 w-full text-black dark:text-gray-300 "
               onSubmit={handleSubmit}
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-10 lg:gap-y-0 gap-y-6">
                 <div className="col-span-6">
-                  <label htmlFor="name" className="text-black font-medium block mb-2">
+                  <label className=" font-medium block mb-2">
                     Name
                   </label>
-                  <TextField
-                    id="name"
-                    label="Your Name"
-                    variant="outlined"        
-                    fullWidth   
-                    size="small"                 
-                    required  
-                    sx={{
-                      "& .MuiInputBase-root": { padding: "4px 8px" },
-                      "& .MuiOutlinedInput-input": { padding: "6px 8px" },
-                      // "& .MuiInputLabel-root": { top: "-5px" },
-                    }}
-                  />
+                  <CustomTextField label="Your Name" />
                 </div>
                 <div className="col-span-6">
-                  <label htmlFor="email" className="text-black font-medium block mb-2">
+                  <label className=" font-medium block mb-2">
                     Email Address
                   </label>
-                  <TextField
-                    id="email"
-                    label="Your Email"
-                    variant="outlined"        
-                    fullWidth  
-                    size="small" 
-                    required      
-                    sx={{
-                      "& .MuiInputBase-root": { padding: "4px 8px" },
-                      "& .MuiOutlinedInput-input": { padding: "6px 8px" },
-                      // "& .MuiInputLabel-root": { top: "-5px" },
-                    }}
-                  />
+                  <CustomTextField label="Your Email" />
+
             
                 </div>
               </div>
 
               <div className="w-full ">
-                <label htmlFor="subject" className="text-black font-medium block mb-2">
+                <label className=" font-medium block mb-2">
                   Subject
                 </label>
-                <TextField
-                    id="subject"
-                    label="Enter Subject"
-                    variant="outlined"        
-                    fullWidth   
-                    size="small"                 
-                    required  
-                    sx={{
-                      "& .MuiInputBase-root": { padding: "4px 8px" },
-                      "& .MuiOutlinedInput-input": { padding: "6px 8px" },
-                      // "& .MuiInputLabel-root": { top: "-5px" },
-                    }}
-                  />
+                 <CustomTextField label="Enter Your Subject" />
+
               </div>
 
               <div className="w-full ">
-                <label htmlFor="message" className="text-black font-medium block mb-2 ">
+                <label className=" font-medium block mb-2 ">
                   Message
                 </label>
+
                 <div>
-                 <TextField
-                    id="message"
-                    label="Your Message"
-                    variant="outlined"        
-                    fullWidth   
-                    size="small"
+                  <CustomTextField 
+                    label="Write your message"
                     multiline
-                    rows={5}                 
-                    required  
-                    sx={{
-                      "& .MuiInputBase-root": { padding: "4px 8px" },
-                      "& .MuiOutlinedInput-input": { padding: "6px 8px" },
-                      // "& .MuiInputLabel-root": { top: "-5px" },
-                    }}
+                    rows={5} 
                   />
                 </div>
               </div>
 
               <div>
-                <button
+                <button  
                   type="submit"
-                  className="bg-blue-600 text-white py-4 px-4 rounded-lg hover:bg-blue-700 transition"
-                >
+                  className="bg-blue-600 text-white py-4 px-4 rounded-lg hover:bg-blue-700 transition" >
                   Send Message
                 </button>
               </div>

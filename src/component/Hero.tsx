@@ -56,7 +56,7 @@ export default function Hero() {
       className=" bg-[url('/simple.jpg')] bg-cover bg-center min-h-screen  text-white overflow-hidden relative select-none"
     >
       {/* overlay */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none bg-black/45 "></div>
+      <div className="absolute inset-0 overflow-hidden pointer-events-none bg-black/45 dark:bg-black/70 "></div>
 
       {/* Content */}
       
@@ -70,7 +70,7 @@ export default function Hero() {
             <div className={` flex items-center justify-center md:justify-start max-w-[550px] md:ml-14 xl:ml-36  relative ${archivo.className}`}
             >
               <span
-                className="text-2xl md:text-3xl xl:text-4xl font-extrabold inline-block whitespace-nowrap overflow-hidden transition-all duration-500 ease-in-out text-white"
+                className="text-2xl md:text-3xl xl:text-4xl font-extrabold inline-block whitespace-nowrap overflow-hidden transition-all duration-500 ease-in-out text-white "
                 style={{
                   width: isDeleting ? "0ch" : `${texts[textIndex].length}ch`,
                 }}

@@ -14,7 +14,7 @@ export default function About() {
 
  
   return (
-    <div  id="about" className="relative px-6 py-20 bg-[#ffffff] text-white border-b border-gray-200">
+    <div  id="about" className="relative px-6 py-20 bg-[#ffffff] dark:bg-black text-white border-b border-gray-200 dark:border-gray-600">
       <Container>
         {/* heading */}
         <motion.div

@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/component/Navbar";
 import { roboto } from "@/fonts";
 import Footer from "@/component/Footer";
+import { ThemeProvider } from "@/contextApi/ThemeContex";
 
 
 
@@ -15,11 +16,13 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
   return (
     <html lang="en">
       <body
-        className={`${roboto.className} antialiased`}
+        className={`${roboto.className} transition-colors duration-500`}
       >
-        <Navbar/>
-        <main className="pt-0">{children}</main>
-        <Footer/>
+        <ThemeProvider>
+          <Navbar/>
+          <main className="pt-0">{children}</main>
+          <Footer/>
+        </ThemeProvider>
       </body>
     </html>
   );
