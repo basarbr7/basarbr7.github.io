@@ -140,17 +140,11 @@ export default function About() {
               Who am I?
             </h2>
             <h1 className="text-lg sm:text-2xl lg:text-3xl font-medium md:font-bold mb-10 text-gray-700">
-              I&apos;m Basar, a visual Front-End Developer, building clean,
+              I&apos;m Basar, a visual FullStack Developer, building clean,
               user-friendly interfaces.
             </h1>
             <p className="text-justify sm:text-left text-base sm:text-lg leading-relaxed text-gray-600 pb-7 border-b-[2px] border-[rgba(255,255,255,0.08)]">
-              I&apos;m Basar, a Front-End Web Developer based in Bangladesh. I
-              specialize in building clean, responsive user interfaces using
-              modern tools like React, Tailwind CSS, and Redux. I enjoy turning
-              ideas into functional digital products with an eye for detail and
-              user experience. I continuously explore the evolving world of
-              front-end development to build fast, accessible, and user-friendly
-              web applications.
+             I&apos;m Basar, a Full Stack Web Developer based in Bangladesh. I specialize in building scalable, high-performance web applications using the MERN stack — MongoDB, Express, React, and Node.js. I love crafting clean, responsive user interfaces while developing efficient and secure back-end systems. I’m passionate about turning ideas into complete digital solutions with a strong focus on user experience and modern development practices.
             </p>
             <motion.div
               initial={{ opacity: 0, y: 60 }}
