@@ -11,7 +11,8 @@ import { DiJavascript } from "react-icons/di";
 import { archivo } from "@/fonts";
 
 export default function Hero() {
-  const texts = ["Frontend Developer", "React Developer", "Next Enthusiast"];
+  const texts = ["MERN Stack Developer", "Full Stack Developer", "React Developer", "Next.js Developer"];
+
   const [textIndex, setTextIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -50,6 +51,18 @@ export default function Hero() {
     }
   };
 
+  const [fontSize, setFontSize] = useState(1.2);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) setFontSize(1.5); // mobile
+      else setFontSize(1.9); // desktop
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div
       id="home"
@@ -62,15 +75,24 @@ export default function Hero() {
       
       <Container className="flex justify-between gap-5 items-center pt-40 pb-28  relative  z-10">
         {/* Left side content */}
-        <div className="w-full max-w-[1120px] mx-auto">
+        <div className="w-full max-w-[1120px] mx-auto ">
           {/* Typing & marquee section */}
-          <div className="max-w-full mx-auto md:h-10 flex flex-col  md:flex-row items-center justify-center  md:justify-between ">
+          <div className="max-w-xl mx-auto  ">
+
+            {/* Horizontal marquee */}
+            <div className="mb-5  overflow-hidden max-w-full text-white flex items-center">
+              <div className="animate-marquee whitespace-nowrap">
+                <span className=" text-xl">
+                  🚀 Hello — Welcome to my site!
+                </span>
+              </div>
+            </div>
 
             {/* Typing Text */}
-            <div className={` flex items-center justify-center md:justify-start max-w-[550px] md:ml-14 xl:ml-36  relative ${archivo.className}`}
+            <div className={` flex items-center justify-center md:justify-start md:ml-14 max-w-full  relative ${archivo.className}`}
             >
               <span
-                className="text-2xl md:text-3xl xl:text-4xl font-extrabold inline-block whitespace-nowrap overflow-hidden transition-all duration-500 ease-in-out text-white "
+                className="text-2xl sm:text-3xl xl:text-4xl font-extrabold inline-block whitespace-nowrap overflow-hidden transition-all duration-500 ease-in-out text-white "
                 style={{
                   width: isDeleting ? "0ch" : `${texts[textIndex].length}ch`,
                 }}
@@ -79,46 +101,41 @@ export default function Hero() {
               </span>
               <span className="inline-block w-[2px] h-14 bg-gray-300"></span>
             </div>
-
-            {/* Horizontal marquee */}
-            <div className="  overflow-hidden max-w-[550px] text-white flex items-center">
-              <div className="animate-marquee whitespace-nowrap">
-                <span className=" text-xl">
-                  🚀 Hello — Welcome to my site!
-                </span>
-              </div>
-            </div>
-            
           </div>
 
           {/* 3D Text */}
-          <Canvas camera={{ position: [0, 0, 8], fov: 50 }}>
-            <ambientLight intensity={0.5} />
-            <directionalLight position={[0, 5, 5]} intensity={1} />
-            <Text
-              position={[0, 0, 0]}
-              rotation={[0, 0.4, 0]}
-              fontSize={1.8}
-              color="#00f0ff"
-              anchorX="center"
-              anchorY="middle"
-              outlineWidth={0.02}
-              outlineColor="#ffffff"
-            >
-              Hi, I am Basar
-            </Text>
-            <OrbitControls enableZoom={false} enableRotate={false} />
-          </Canvas>
+          <div className=" w-full h-[130px] flex justify-center md:justify-start items-center ml-5 ">
+            <Canvas camera={{ position: [0, 0, 7], fov: 45 }}
+            style={{ width: "100%", height: "100%" }}>
+              <ambientLight intensity={0.5} />
+              <directionalLight position={[0, 5, 5]} intensity={1} />
+              <Text
+                position={[0, 0, 0.1]}
+                rotation={[0, 0.3, 0]}
+                fontSize={fontSize}
+                color="#7B542F"
+                anchorX="center"
+                anchorY="middle"
+                outlineWidth={0.03}
+                outlineColor="#000000"
+              >
+                Hi, I am Basar
+              </Text>
+              
+              
+              <OrbitControls enableZoom={false} enableRotate={false} />
+            </Canvas>
+          </div>
 
           {/* Paragraph */}
           <p className="text-base text-center sm:text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-10">
-            A passionate Frontend Developer who loves crafting
-            <span className="text-blue-400 font-semibold"> modern </span>&
+            A passionate FullStack Developer who loves crafting
+            <span className="text-blue-400 font-semibold"> modern </span>&&nbsp; 
             <span className="text-purple-400 font-semibold">
               
-              user-friendly
+              user-friendly&nbsp; 
             </span>
-            web experiences using React, Tailwind CSS, and JavaScript.
+             web experiences using React, Node.js, Express, and MongoDB.
           </p>
 
           {/* Buttons */}
