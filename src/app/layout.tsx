@@ -4,6 +4,8 @@ import Navbar from "@/component/Navbar";
 import { roboto } from "@/fonts";
 import Footer from "@/component/Footer";
 import { ThemeProvider } from "@/contextApi/ThemeContex";
+import ScrollTop from "@/sidebar/ScrollTop";
+import Message from "@/sidebar/Message";
 
 
 
@@ -22,6 +24,8 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
           <Navbar/>
           <main className="pt-0">{children}</main>
           <Footer/>
+          <ScrollTop/>
+          <Message/>
         </ThemeProvider>
       </body>
     </html>
