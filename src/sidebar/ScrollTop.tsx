@@ -34,7 +34,7 @@ const ScrollTop = () => {
                 className="fixed bottom-10 right-10 px-2 py-4 text-white bg-gray-700/70 rounded-md cursor-pointer shadow-lg"
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} 
             >
-                <MoveUp size={24} />
+                <MoveUp size={24} className="animate-pulse" />
             </motion.div>
         )}
 
